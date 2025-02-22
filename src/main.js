@@ -1,13 +1,10 @@
 import Alpine from "alpinejs";
 import _ from 'lodash';
-import "../../example-app/fadgram-ui/helpers";
-import { FadgramTheme } from "../../example-app/fadgram-ui/theme";
+import "fadgram-ui/helpers";
+import { FadgramTheme } from "fadgram-ui/theme";
 import Prism from 'prismjs';
 import "prismjs/themes/prism-okaidia.css";
-//import './style.css'
-
 document.addEventListener('alpine:init', () => {
-  console.log('alpine init');
   Alpine.data('fadgramUiDocs', () => ({
     currentUrl: "",
     content: 'Click a link to load content',

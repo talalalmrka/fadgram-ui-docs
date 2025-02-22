@@ -1,8 +1,8 @@
 import { addIconSelectors } from "@iconify/tailwind";
-//import { FadgramUI } from "fadgram-ui";
-import { FadgramUI } from "../example-app/fadgram-ui";
-//import { fgThemeColors } from 'fadgram-ui/theme.js';
-import { fgThemeColors } from '../example-app/fadgram-ui/theme.js';
+import { FadgramUI } from "fadgram-ui";
+//import { FadgramUI } from "../example-app/fadgram-ui";
+import { fgThemeColors } from 'fadgram-ui/theme.js';
+//import { fgThemeColors } from '../example-app/fadgram-ui/theme.js';
 import defaultTheme from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 export default {
