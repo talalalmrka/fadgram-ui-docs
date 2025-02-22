@@ -6,7 +6,10 @@ export default defineConfig({
     base: '/fadgram-ui-docs/', // Match your GitHub repo name
     css: {
         postcss: {
-            plugins: [tailwindcss, autoprefixer]
-        }
-    }
-})
+            plugins: [
+                tailwindcss,
+                autoprefixer
+            ],
+        },
+    },
+});

@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body,
+html {}
+
+#main-drawer {
+    .nav-link {
+        &.active {
+            @apply text-white bg-primary rounded-full dark:text-primary dark:bg-white;
+        }
+    }
+}
+
+pre {
+    @apply bg-gray-800 text-white p-2 rounded text-xs;
+    font-family: 'Courier New', Courier, monospace;
+    max-height: 350px;
+    overflow: auto;
+}
+
+.sidebar-link {
+    /*@apply text-red border border-red-600;*/
+}

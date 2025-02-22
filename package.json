@@ -9,14 +9,18 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "vite": "^6.1.0"
   },
   "dependencies": {
+    "@iconify-json/bi": "^1.2.2",
+    "@iconify/tailwind": "^1.2.0",
     "alpinejs": "^3.14.8",
     "fadgram-ui": "^0.0.5",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "prismjs": "^1.29.0"
   }
 }
