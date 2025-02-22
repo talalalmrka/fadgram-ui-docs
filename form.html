@@ -1,0 +1,406 @@
+<h2>Forms</h2>
+<div class="my-4">
+    <h4>Form controls</h4>
+    <div class="grid grid-cols-1 gap-3">
+        <div class="col">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="col">
+                    <label for="first_name" class="form-label">First name</label>
+                    <input id="first_name" type="text" class="form-control" placeholder="insert text first name...">
+                    <div class="form-info">first name info</div>
+                </div>
+                <div class="col">
+                    <label for="last_name" class="form-label">Last name</label>
+                    <input id="last_name" type="text" class="form-control" placeholder="insert text last name...">
+                    <div class="form-info">last name info</div>
+                </div>
+                <div class="col">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select">
+                        <option value="m">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                    <div class="form-info">select gender info</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check">
+                <input type="checkbox" id="agree" value="1">
+                <label for="agree">Agree policy</label>
+            </div>
+        </div>
+        <div class="col">
+            <label class="form-label">Select country</label>
+            <div class="form-radio">
+                <input type="radio" id="country-1" name="countries" value="usa">
+                <label for="country-1">United states</label>
+            </div>
+            <div class="form-radio">
+                <input type="radio" id="country-2" name="countries" value="uk">
+                <label for="country-2">United kindom</label>
+            </div>
+            <div class="form-radio disabled">
+                <input type="radio" id="country-3" name="countries" value="germany" disabled>
+                <label for="country-3">Germany</label>
+            </div>
+        </div>
+        <div class="col">
+            <label class="form-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+                <span class="form-switch-label">Toggle</span>
+            </label>
+        </div>
+        <div class="col">
+            <label for="bio" class="form-label">Bio</label>
+            <textarea id="bio" class="form-control" rows="4" placeholder="insert some bio about you..."></textarea>
+            <div class="form-info">bio info</div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn primary">Submit</button>
+        </div>
+    </div>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;grid grid-cols-1 gap-3&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;grid grid-cols-1 md:grid-cols-3 gap-3&quot;&gt;
+            &lt;div class=&quot;col&quot;&gt;
+                &lt;label for=&quot;first_name&quot; class=&quot;form-label&quot;&gt;First name&lt;/label&gt;
+                &lt;input id=&quot;first_name&quot; type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;insert text first name...&quot;&gt;
+                &lt;div class=&quot;form-info&quot;&gt;first name info&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;
+                &lt;label for=&quot;last_name&quot; class=&quot;form-label&quot;&gt;Last name&lt;/label&gt;
+                &lt;input id=&quot;last_name&quot; type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;insert text last name...&quot;&gt;
+                &lt;div class=&quot;form-info&quot;&gt;last name info&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;col&quot;&gt;
+                &lt;label for=&quot;gender&quot; class=&quot;form-label&quot;&gt;Gender&lt;/label&gt;
+                &lt;select id=&quot;gender&quot; class=&quot;form-select&quot;&gt;
+                    &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+                    &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;div class=&quot;form-info&quot;&gt;select gender info&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;form-check&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;agree&quot; value=&quot;1&quot;&gt;
+            &lt;label for=&quot;agree&quot;&gt;Agree policy&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label class=&quot;form-label&quot;&gt;Select country&lt;/label&gt;
+        &lt;div class=&quot;form-radio&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;country-1&quot; name=&quot;countries&quot; value=&quot;usa&quot;&gt;
+            &lt;label for=&quot;country-1&quot;&gt;United states&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-radio&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;country-2&quot; name=&quot;countries&quot; value=&quot;uk&quot;&gt;
+            &lt;label for=&quot;country-2&quot;&gt;United kindom&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;form-radio disabled&quot;&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;country-3&quot; name=&quot;countries&quot; value=&quot;germany&quot; disabled&gt;
+            &lt;label for=&quot;country-3&quot;&gt;Germany&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label class=&quot;form-switch&quot;&gt;
+            &lt;input type=&quot;checkbox&quot;&gt;
+            &lt;span class=&quot;toggle-slider&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;form-switch-label&quot;&gt;Toggle&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;bio&quot; class=&quot;form-label&quot;&gt;Bio&lt;/label&gt;
+        &lt;textarea id=&quot;bio&quot; class=&quot;form-control&quot; rows=&quot;4&quot; placeholder=&quot;insert some bio about you...&quot;&gt;&lt;/textarea&gt;
+        &lt;div class=&quot;form-info&quot;&gt;bio info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn primary&quot;&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="my-4">
+    <h4>Sizes</h4>
+    <pre><code class="language-html">&lt;input id=&quot;first_name&quot; type=&quot;text&quot; class=&quot;form-control {size}&quot; placeholder=&quot;insert text first name...&quot;&gt;</code></pre>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+        <div class="col">
+            <label for="xs-input" class="form-label">Extra small input</label>
+            <input id="xs-input" type="text" class="form-control xs" placeholder="insert text...">
+            <div class="form-info">Extra small input info</div>
+        </div>
+        <div class="col">
+            <label for="sm-input" class="form-label">Small input</label>
+            <input id="sm-input" type="text" class="form-control sm" placeholder="insert text...">
+            <div class="form-info">Small input info</div>
+        </div>
+        <div class="col">
+            <label for="default-input" class="form-label">Default input</label>
+            <input id="default-input" type="text" class="form-control" placeholder="insert text...">
+            <div class="form-info">Default input info</div>
+        </div>
+        <div class="col">
+            <label for="lg-input" class="form-label">Large input</label>
+            <input id="lg-input" type="text" class="form-control lg" placeholder="insert text...">
+            <div class="form-info">Large input info</div>
+        </div>
+        <div class="col">
+            <label for="xl-input" class="form-label">X-Large input</label>
+            <input id="xl-input" type="text" class="form-control xl" placeholder="insert text...">
+            <div class="form-info">X-Large input info</div>
+        </div>
+        <div class="col">
+            <label for="xxl-input" class="form-label">XX-Large input</label>
+            <input id="xxl-input" type="text" class="form-control xxl" placeholder="insert text...">
+            <div class="form-info">XX-Large input info</div>
+        </div>
+    </div>
+</div>
+
+<div class="my-4">
+    <h4>Validations</h4>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="col">
+            <label for="success-input" class="form-label success">Success input</label>
+            <input id="success-input" type="text" class="form-control success" placeholder="insert text...">
+            <div class="form-info success">Success input info</div>
+        </div>
+        <div class="col">
+            <label for="error-input" class="form-label error">Error input</label>
+            <input id="error-input" type="text" class="form-control error" placeholder="insert text...">
+            <div class="form-info error">Error input info</div>
+        </div>
+        <div class="col">
+            <label for="bio-success" class="form-label success">Bio</label>
+            <textarea id="bio-success" class="form-control success" rows="3"
+                placeholder="insert some bio about you..."></textarea>
+            <div class="form-info success">success bio info</div>
+        </div>
+        <div class="col">
+            <label for="bio-error" class="form-label error">Bio</label>
+            <textarea id="bio-error" class="form-control error" rows="3"
+                placeholder="insert some bio about you..."></textarea>
+            <div class="form-info error">Error bio info</div>
+        </div>
+        <div class="col">
+            <label for="gender-success" class="form-label success">Gender</label>
+            <select id="gender-success" class="form-select success">
+                <option value="m">Male</option>
+                <option value="1">Female</option>
+            </select>
+            <div class="form-info success">select gender info</div>
+        </div>
+        <div class="col">
+            <label for="gender-error" class="form-label error">Gender</label>
+            <select id="gender-error" class="form-select error">
+                <option value="m">Male</option>
+                <option value="1">Female</option>
+            </select>
+            <div class="form-info error">select gender info</div>
+        </div>
+        <div class="col">
+            <div class="form-check success">
+                <input type="checkbox" id="agree-success" value="1">
+                <label for="agree-success">Agree policy</label>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-check error">
+                <input type="checkbox" id="agree-error" value="1">
+                <label for="agree-error">Agree policy</label>
+            </div>
+        </div>
+        <div class="col">
+            <label class="form-switch success">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+                <span class="form-switch-label">Toggle</span>
+            </label>
+        </div>
+        <div class="col">
+            <label class="form-switch error">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+                <span class="form-switch-label">Toggle</span>
+            </label>
+        </div>
+    </div>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;grid grid-cols-1 md:grid-cols-2 gap-3&quot;&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;success-input&quot; class=&quot;form-label success&quot;&gt;Success input&lt;/label&gt;
+        &lt;input id=&quot;success-input&quot; type=&quot;text&quot; class=&quot;form-control success&quot; placeholder=&quot;insert text...&quot;&gt;
+        &lt;div class=&quot;form-info success&quot;&gt;Success input info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;error-input&quot; class=&quot;form-label error&quot;&gt;Error input&lt;/label&gt;
+        &lt;input id=&quot;error-input&quot; type=&quot;text&quot; class=&quot;form-control error&quot; placeholder=&quot;insert text...&quot;&gt;
+        &lt;div class=&quot;form-info error&quot;&gt;Error input info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;bio-success&quot; class=&quot;form-label success&quot;&gt;Bio&lt;/label&gt;
+        &lt;textarea id=&quot;bio-success&quot; class=&quot;form-control success&quot; rows=&quot;3&quot;
+            placeholder=&quot;insert some bio about you...&quot;&gt;&lt;/textarea&gt;
+        &lt;div class=&quot;form-info success&quot;&gt;success bio info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;bio-error&quot; class=&quot;form-label error&quot;&gt;Bio&lt;/label&gt;
+        &lt;textarea id=&quot;bio-error&quot; class=&quot;form-control error&quot; rows=&quot;3&quot;
+            placeholder=&quot;insert some bio about you...&quot;&gt;&lt;/textarea&gt;
+        &lt;div class=&quot;form-info error&quot;&gt;Error bio info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;gender-success&quot; class=&quot;form-label success&quot;&gt;Gender&lt;/label&gt;
+        &lt;select id=&quot;gender-success&quot; class=&quot;form-select success&quot;&gt;
+            &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+            &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div class=&quot;form-info success&quot;&gt;select gender info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label for=&quot;gender-error&quot; class=&quot;form-label error&quot;&gt;Gender&lt;/label&gt;
+        &lt;select id=&quot;gender-error&quot; class=&quot;form-select error&quot;&gt;
+            &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+            &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+        &lt;/select&gt;
+        &lt;div class=&quot;form-info error&quot;&gt;select gender info&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;form-check success&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;agree-success&quot; value=&quot;1&quot;&gt;
+            &lt;label for=&quot;agree-success&quot;&gt;Agree policy&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;div class=&quot;form-check error&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;agree-error&quot; value=&quot;1&quot;&gt;
+            &lt;label for=&quot;agree-error&quot;&gt;Agree policy&lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label class=&quot;form-switch success&quot;&gt;
+            &lt;input type=&quot;checkbox&quot;&gt;
+            &lt;span class=&quot;toggle-slider&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;form-switch-label&quot;&gt;Toggle&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;col&quot;&gt;
+        &lt;label class=&quot;form-switch error&quot;&gt;
+            &lt;input type=&quot;checkbox&quot;&gt;
+            &lt;span class=&quot;toggle-slider&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;form-switch-label&quot;&gt;Toggle&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h2 class="mt-4">Input group</h2>
+<div class="input-group mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select id="" class="form-control">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h4 class="mt-4">Sizes</h4>
+
+<h6 class="mt-4">xs</h6>
+<div class="input-group xs mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select id="" class="form-control">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group xs&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h6 class="mt-4">sm</h6>
+<div class="input-group sm mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select id="" class="form-control">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group sm&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h6 class="mt-4">lg</h6>
+<div class="input-group lg mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select id="" class="form-control">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group lg&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h6 class="mt-4">xl</h6>
+<div class="input-group xl mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select id="" class="form-control">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group xl&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="nav justify-between p-3">
+    <a x-bind="sidebarLink" href="dropdown.html" class="nav-link">
+        <span class="icon bi-chevron-left"></span>
+        <span>Dropdowns</span>
+    </a>
+    <a x-bind="sidebarLink" href="card.html" class="nav-link">
+        <span>Cards</span>
+        <span class="icon bi-chevron-right"></span>
+    </a>
+</div>

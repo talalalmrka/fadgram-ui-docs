@@ -1,0 +1,51 @@
+<h2>Installation</h2>
+<div class="mt-4">
+    <h4>Quick start</h4>
+    <p>
+        Fadgram UI is a Tailwind CSS plugin that provides a set of custom utility classes to enhance your web
+        development experience. This plugin is designed to work seamlessly with Tailwind CSS, allowing you to
+        quickly and easily style your web applications.
+    </p>
+</div>
+<div class="mt-4">
+    <h4>Installation</h4>
+    <p>
+        To install Fadgram UI, you need to have Tailwind CSS already set up in your project. If you haven't set up
+        Tailwind CSS yet, follow the official installation guide.
+        Once Tailwind CSS is set up, you can install Fadgram UI via npm:
+    </p>
+    <pre><code class="language-bash">npm i fadgram-ui@latest</code></pre>
+</div>
+<div class="mt-4">
+    <h4>Setup (tailwind.config.js).</h4>
+    <p>
+        To use Fadgram UI in your project, you need to include it in your Tailwind CSS configuration file
+        (tailwind.config.js):
+    </p>
+    <pre><code class="language-js">import { FadgramUI } from "fadgram-ui";
+import { fgThemeColors } from "fadgram-ui/theme.js";
+export default {
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+    theme: {
+        extend: {
+            colors: fgThemeColors({
+                // Add custom colors here
+            }),
+        },
+    },
+    plugins: [FadgramUI],
+};</code></pre>
+</div>
+
+<div class="my-4">
+    <h6>Adding javascript helpers to your main javascript file (main.js) or (app.js).</h6>
+    <pre><code class="language-js">import 'fadgram-ui/helpers/index.js';</code></pre>
+</div>
+
+<div class="nav justify-between p-3">
+    <a class="nav-link"></a>
+    <a x-bind="sidebarLink" id="nav-link-typography" href="typography.html" class="nav-link">
+        <span>Typography</span>
+        <span class="icon bi-chevron-right"></span>
+    </a>
+</div>
