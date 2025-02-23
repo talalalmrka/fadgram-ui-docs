@@ -4,7 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Documentation | FadgramUI</title>
   <link rel="icon" type="image/x-icon" href="/images/logo.svg">
   <!-- Fonts -->
@@ -14,7 +13,7 @@
 </head>
 
 <body x-data="fadgramUiDocs"
-  class="font-poppins antialiased text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-900">
+  class="relative font-poppins antialiased text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-900">
   <div class="min-h-screen">
     <div class="drawer drawer-start bg-gray-100 dark:bg-gray-700 expand-lg" id="main-drawer">
       <div class="drawer-header flex space-x-2 items-center h-14">
@@ -22,82 +21,47 @@
           class="drawer-title grow text-center text-xl font-semibold bg-gradient-to-bl from-primary-600 to-rose-600 bg-clip-text text-transparent">
           FadgramUi
         </div>
-        <span class="text-sm">v0.0.4</span>
+        <span class="text-sm" x-text="version"></span>
         <button class="btn drawer-close lg:hidden">
           <i class="icon bi-x"></i>
         </button>
       </div>
       <div class="drawer-body">
         <nav class="nav vertical">
-          <a x-bind="sidebarLink" id="nav-link-install" href="install.html" class="nav-link">
-            <i class="icon bi-gear-wide-connected"></i> <span>Installation</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-typography" href="typography.html" class="nav-link">
-            <i class="icon bi-type "></i> <span>Typography</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-button" href="button.html" class="nav-link">
-            <i class="icon bi-square "></i> <span>Buttons</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-dropdown" href="dropdown.html" class="nav-link">
-            <i class="icon bi-menu-button "></i> <span>Dropdowns</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-form" href="form.html" class="nav-link">
-            <i class="icon bi-ui-checks "></i> <span>Forms</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-card" href="card.html" class="nav-link">
-            <i class="icon bi-card-heading "></i> <span>Cards</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-icon" href="icon.html" class="nav-link">
-            <i class="icon bi-emoji-neutral "></i> <span>Icons</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-navbar" href="navbar.html" class="nav-link">
-            <i class="icon bi-segmented-nav "></i> <span>Navbar</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-badge" href="badge.html" class="nav-link">
-            <i class="icon bi-badge-ad "></i> <span>Badges</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-progress" href="progress.html" class="nav-link">
-            <span>Progress</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-drawer" href="drawer.html" class="nav-link">
-            <span>Drawers</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-alert" href="alert.html" class="nav-link">
-            <span>Alerts</span>
-          </a>
-          <a x-bind="sidebarLink" id="nav-link-table" href="table.html" class="nav-link">
-            <span>Tables</span>
-          </a>
+          <template x-for="(page, index) in pages" :key="index">
+            <a x-bind="sidebarLink" class="nav-link" :href="getPageHref(page)"
+              :class="{'active': page.id == currentPage.id}">
+              <i class="icon" :class="page.icon"></i>
+              <span x-text="page.label"></span>
+            </a>
+          </template>
         </nav>
       </div>
-
     </div>
-
-    <main class="lg:ms-64 min-h-75vh">
-      <div class="navbar sticky top-0 bg-gray-100 dark:bg-gray-700 z-10 h-14">
-        <button class="navbar-toggle" class="navbar-toggler" data-fg-toggle="drawer" data-fg-target="#main-drawer">
-          <span></span>
+    <main class="lg:ps-64 min-h-75vh relative">
+      <div class="navbar sticky top-0 bg-gray-100 dark:bg-gray-700 z-10 h-14 w-full">
+        <button class="btn lg:hidden" data-fg-toggle="drawer" data-fg-target="#main-drawer">
+          <i class="icon bi-list"></i>
         </button>
         <div class="nav justify-center">
-          <div class="form-control-container">
+          <div class="form-control-container w-[150px]">
             <span class="absolute start-0 top-0 bottom-0 flex items-center px-2">
               <i class="icon bi-search text-sm"></i>
             </span>
             <input type="search" class="form-control sm" style="padding-inline:30px !important;" />
-            <span class="flex absolute end-0 top-0 bottom-0 flex items-center px-2">
+            <span class="absolute end-0 top-0 bottom-0 flex items-center px-2">
               ⌘K
             </span>
           </div>
         </div>
         <div class="nav">
-
           <button type="button" class="nav-link dark-mode-toggle">
             <i class="icon bi-moon-stars-fill "></i> </button>
           <div class="dropdown">
             <button type="button" class="nav-link dropdown-toggle">
               <i class="icon bi-person-fill "></i>
               <i class="icon bi-chevron-down w-3 h-3 "></i> </button>
-            <div class="dropdown-menu w-40">
+            <div class="dropdown-menu dropdown-end">
               <a href="#!" class="dropdown-link">
                 Sign in
               </a>
@@ -108,7 +72,26 @@
           </div>
         </div>
       </div><!--navbar-->
-      <div class="md:container" x-html="content"></div>
+      <div class="container">
+        <div x-html="content"></div>
+        <div class="nav justify-between p-3">
+          <template x-if="prevPage">
+            <a x-bind="sidebarLink" :href="getPageHref(prevPage)" class="nav-link">
+              <span class="icon bi-chevron-left"></span>
+              <span x-text="prevPage.label"></span>
+            </a>
+          </template>
+          <template x-if="!prevPage">
+            <span class="nav-link"></span>
+          </template>
+          <template x-if="nextPage">
+            <a x-bind="sidebarLink" :href="getPageHref(nextPage)" class="nav-link">
+              <span x-text="nextPage.label"></span>
+              <span class="icon bi-chevron-right"></span>
+            </a>
+          </template>
+        </div>
+      </div>
     </main>
   </div>
   <script type="module" src="/src/main.js"></script>

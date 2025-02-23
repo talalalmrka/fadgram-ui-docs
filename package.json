@@ -19,7 +19,7 @@
     "@iconify-json/bi": "^1.2.2",
     "@iconify/tailwind": "^1.2.0",
     "alpinejs": "^3.14.8",
-    "fadgram-ui": "^0.0.6",
+    "fadgram-ui": "^0.0.9",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0"
   }

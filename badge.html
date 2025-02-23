@@ -1,2 +1,47 @@
 <h2>Badge</h2>
-<div class="alert alert-success">We are working on it</div>
+
+<h4 class="mt-4">Colors</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="(shades, color) in colors" :key="color">
+        <div>
+            <span class="badge" :class="color" x-text="color"></span>
+        </div>
+    </template>
+</div>
+<div class="alert alert-info">replace {color} with the color name.</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge {color}&quot;&gt;badge&lt;/span&gt;</code></pre>
+
+<h4 class="mt-4">Outline badge</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="(shades, color) in colors" :key="color">
+        <div>
+            <span class="badge outline" :class="color" x-text="color"></span>
+        </div>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge outline {color}&quot;&gt;badge&lt;/span&gt;</code></pre>
+<h4 class="mt-4">Badge pill</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="(shades, color) in colors" :key="color">
+        <div>
+            <span class="badge pill" :class="color" x-text="color"></span>
+        </div>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge pill {color}&quot;&gt;badge&lt;/span&gt;</code></pre>
+
+<h4 class="mt-4">Sizes</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="size in sizes" :key="size">
+        <div>
+            <span class="badge primary" :class="size" x-text="size"></span>
+        </div>
+    </template>
+</div>
+<div class="alert alert-info">replace {size} with the size (xs, sm, lg, xl).</div>
+
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge primary {size}&quot;&gt;badge&lt;/span&gt;</code></pre>

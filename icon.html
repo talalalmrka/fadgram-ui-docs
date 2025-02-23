@@ -1,4 +1,24 @@
 <h2>Icons</h2>
+<h4 class="mt-4">Install depencies</h4>
+<p>to use icons install iconify package && iconify bi icons set in dev depencies</p>
+<pre class="mt-4"><code class="language-bash">npm i -D @iconify/tailwind</code></pre>
+<pre class="mt-4"><code class="language-bash">npm i -D @iconify-json/bi</code></pre>
+
+<p class="mt-4">import icons plugin to (tailwind.config.js) and add it to the plugins</p>
+<pre class="mt-4"><code class="language-js">import { addIconSelectors } from "@iconify/tailwind";
+/** @type {import('tailwindcss').Config} */
+export default {
+    plugins: [
+    ...
+        addIconSelectors({
+            prefixes: [
+                'bi',
+            ],
+            iconSelector: ".{prefix}-{name}",
+            maskSelector: ".icon",
+        }),
+    ], 
+}</code></pre>
 <div class="grid auto-cols-auto grid-flow-col gap-4 mb-4">
     <div class="flex flex-col items-center">
         <i class="icon bi-house-fill"></i>
@@ -44,15 +64,3 @@
         &lt;small&gt;bi-shield-fill-check&lt;/small&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-
-
-<div class="nav justify-between p-3">
-    <a x-bind="sidebarLink" href="card.html" class="nav-link">
-        <span class="icon bi-chevron-left"></span>
-        <span>Cards</span>
-    </a>
-    <a x-bind="sidebarLink" href="navbar.html" class="nav-link">
-        <span>Navbars</span>
-        <span class="icon bi-chevron-right"></span>
-    </a>
-</div>
