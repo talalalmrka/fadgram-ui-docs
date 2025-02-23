@@ -1,2 +1,37 @@
 <h2>Progress</h2>
-<div class="alert alert-success">We are working on it</div>
+<h4 class="mt-4">Basic usage</h4>
+<div class="progress" role="progressbar">
+    <div class="progress-bar" style="width: 75%;">75%</div>
+</div>
+<pre class="mt-4"><code class="language-html">&lt;div class=&quot;progress&quot; role=&quot;progressbar&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; style=&quot;width: 75%;&quot;&gt;75%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h4 class="mt-4">Colors</h4>
+<template x-for="(shades, color) in colors">
+    <div>
+        <h6 x-text="color"></h6>
+        <div class="progress" :class="color" role="progressbar">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+        </div>
+    </div>
+</template>
+
+<div class="alert alert-info mt-4 p-1">replace {color} with the color name (primary, secondary, red, ...etc)</div>
+<pre class="mt-4"><code class="language-html">&lt;div class=&quot;progress {color}&quot; role=&quot;progressbar&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; style=&quot;width: 75%;&quot;&gt;75%&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h4 class="mt-4">Sizes</h4>
+<template x-for="size in sizes">
+    <div>
+        <h6 x-text="size"></h6>
+        <div class="progress" :class="size" role="progressbar">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+        </div>
+    </div>
+</template>
+
+<div class="alert alert-info mt-4 p-1">replace {size} with the size (xs, sm, lg, xl)</div>
+<pre class="mt-4"><code class="language-html">&lt;div class=&quot;progress {size}&quot; role=&quot;progressbar&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; style=&quot;width: 75%;&quot;&gt;75%&lt;/div&gt;
+&lt;/div&gt;</code></pre>

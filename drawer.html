@@ -1,2 +1,197 @@
 <h2>Drawer</h2>
-<div class="alert alert-success">We are working on it</div>
+<h4 class="mt-4">Basic usage</h4>
+<button type="button" class="btn primary" data-fg-toggle="drawer" data-fg-target="#drawer-basic">
+    Toggle drawer
+</button>
+<div class="drawer bg-gray-50 dark:bg-gray-700" id="drawer-basic">
+    <div class="drawer-header flex space-x-2 items-center h-14">
+        <h3 class="drawer-title grow">FadgramUi</h3>
+        <button class="btn drawer-close">
+            <i class="icon bi-x-lg"></i>
+        </button>
+    </div>
+    <div class="drawer-body">
+        <div class="nav vertical">
+            <a href="#!" class="nav-link active">
+                <i class="icon bi-house-fill "></i> <span>Home</span>
+            </a>
+            <a href="#!" class="nav-link">
+                <i class="icon bi-newspaper "></i> <span>Blog</span>
+            </a>
+            <a href="#!" class="nav-link">
+                <i class="icon bi-palette-fill "></i> <span>Design</span>
+            </a>
+            <a href="#!" class="nav-link">
+                <i class="icon bi-info "></i> <span>About us</span>
+            </a>
+            <a href="#!" class="nav-link">
+                <i class="icon bi-shield-fill-check "></i> <span>Privacy policy</span>
+            </a>
+        </div>
+    </div>
+</div>
+<pre class="mt-4"><code class="language-html">&lt;div class=&quot;drawer bg-gray-50 dark:bg-gray-700&quot; id=&quot;drawer-basic&quot;&gt;
+    &lt;div class=&quot;drawer-header flex space-x-2 items-center h-14&quot;&gt;
+        &lt;h3 class=&quot;drawer-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
+        &lt;button class=&quot;btn drawer-close&quot;&gt;
+            &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;drawer-body&quot;&gt;
+        &lt;div class=&quot;nav vertical&quot;&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link active&quot;&gt;
+                &lt;i class=&quot;icon bi-house-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Home&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-newspaper &quot;&gt;&lt;/i&gt; &lt;span&gt;Blog&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-palette-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Design&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-info &quot;&gt;&lt;/i&gt; &lt;span&gt;About us&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-shield-fill-check &quot;&gt;&lt;/i&gt; &lt;span&gt;Privacy policy&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h4 class="mt-4">Positions</h4>
+<template x-for="position in ['start', 'end', 'top', 'bottom']">
+    <div>
+        <h6 class="mt-4" x-text="position"></h6>
+        <button type="button" class="btn primary" data-fg-toggle="drawer"
+            :data-fg-target="drawerPositionHash(position)">
+            Toggle drawer
+        </button>
+        <div class="drawer bg-gray-50 dark:bg-gray-700" :class="drawerPositionClassName(position)"
+            :id="drawerPositionId(position)">
+            <div class="drawer-header flex space-x-2 items-center h-14">
+                <h3 class="drawer-title grow">FadgramUi</h3>
+                <button class="btn drawer-close">
+                    <i class="icon bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="nav vertical">
+                    <a href="#!" class="nav-link active">
+                        <i class="icon bi-house-fill "></i> <span>Home</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-newspaper "></i> <span>Blog</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-palette-fill "></i> <span>Design</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-info "></i> <span>About us</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-shield-fill-check "></i> <span>Privacy policy</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<div class="alert alert-info p-1 my-4">replace {position} with position: (start, end, top, bottom)</div>
+<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn primary&quot; data-fg-toggle=&quot;drawer&quot; data-fg-target=&quot;#drawer-position-{position}&quot;&gt;
+    Toggle drawer
+&lt;/button&gt;
+&lt;div class=&quot;drawer drawer-{position} bg-gray-50 dark:bg-gray-700&quot; id=&quot;drawer-position-{position}&quot;&gt;
+    &lt;div class=&quot;drawer-header flex space-x-2 items-center h-14&quot;&gt;
+        &lt;h3 class=&quot;drawer-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
+        &lt;button class=&quot;btn drawer-close&quot;&gt;
+            &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;drawer-body&quot;&gt;
+        &lt;div class=&quot;nav vertical&quot;&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link active&quot;&gt;
+                &lt;i class=&quot;icon bi-house-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Home&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-newspaper &quot;&gt;&lt;/i&gt; &lt;span&gt;Blog&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-palette-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Design&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-info &quot;&gt;&lt;/i&gt; &lt;span&gt;About us&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-shield-fill-check &quot;&gt;&lt;/i&gt; &lt;span&gt;Privacy policy&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h4 class="mt-4">Colors</h4>
+<template x-for="(shades, color) in colors">
+    <div>
+        <h6 class="mt-4" x-text="color"></h6>
+        <button type="button" class="btn" :class="color" data-fg-toggle="drawer"
+            :data-fg-target="drawerColorHash(color)">
+            Toggle drawer
+        </button>
+        <div class="drawer" :class="color" :id="drawerColorId(color)">
+            <div class="drawer-header flex space-x-2 items-center h-14">
+                <h3 class="drawer-title grow">FadgramUi</h3>
+                <button class="btn drawer-close">
+                    <i class="icon bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="drawer-body">
+                <div class="nav vertical">
+                    <a href="#!" class="nav-link active">
+                        <i class="icon bi-house-fill "></i> <span>Home</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-newspaper "></i> <span>Blog</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-palette-fill "></i> <span>Design</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-info "></i> <span>About us</span>
+                    </a>
+                    <a href="#!" class="nav-link">
+                        <i class="icon bi-shield-fill-check "></i> <span>Privacy policy</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<div class="alert alert-info p-1 my-4">replace {color} with color name: (primary, secondary, red, ...etc)</div>
+<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn primary&quot; data-fg-toggle=&quot;drawer&quot; data-fg-target=&quot;#drawer-color-{color}&quot;&gt;
+    Toggle drawer
+&lt;/button&gt;
+&lt;div class=&quot;drawer {color}&quot; id=&quot;drawer-color-{color}&quot;&gt;
+    &lt;div class=&quot;drawer-header flex space-x-2 items-center h-14&quot;&gt;
+        &lt;h3 class=&quot;drawer-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
+        &lt;button class=&quot;btn drawer-close&quot;&gt;
+            &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;drawer-body&quot;&gt;
+        &lt;div class=&quot;nav vertical&quot;&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link active&quot;&gt;
+                &lt;i class=&quot;icon bi-house-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Home&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-newspaper &quot;&gt;&lt;/i&gt; &lt;span&gt;Blog&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-palette-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Design&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-info &quot;&gt;&lt;/i&gt; &lt;span&gt;About us&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a href=&quot;#!&quot; class=&quot;nav-link&quot;&gt;
+                &lt;i class=&quot;icon bi-shield-fill-check &quot;&gt;&lt;/i&gt; &lt;span&gt;Privacy policy&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
