@@ -23,15 +23,13 @@
         (tailwind.config.js):
     </p>
     <pre><code class="language-js">import { FadgramUI } from "fadgram-ui";
-import { fgThemeColors } from "fadgram-ui/theme.js";
+import { FadgramTheme } from "fadgram-ui/theme.js";
 export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
-        extend: {
-            colors: fgThemeColors({
-                // Add custom colors here
-            }),
-        },
+        extend: FadgramTheme({
+            //add custom theme here
+        }),
     },
     plugins: [FadgramUI],
 };</code></pre>
