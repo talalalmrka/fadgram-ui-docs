@@ -5,7 +5,7 @@
 <template x-for="size in sizes">
 <div class="mt-4">
 <h6 x-text="size"></h6>
-<div class="p-2" :class="()=>{return 'shadow-'+size}">
+<div class="p-2" :class="shadowClassName(size)">
 this is shadow preview
 </div>
 </div>
