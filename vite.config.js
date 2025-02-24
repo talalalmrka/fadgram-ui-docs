@@ -30,6 +30,7 @@ export default defineConfig({
                 drawer: path.resolve(__dirname, 'drawer.html'),
                 alert: path.resolve(__dirname, 'alert.html'),
                 table: path.resolve(__dirname, 'table.html'),
+shadow: path.resolve(__dirname, 'shadow.html'),
             },
         },
     },
