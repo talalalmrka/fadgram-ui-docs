@@ -94,6 +94,12 @@ document.addEventListener('alpine:init', () => {
         label: "Tables",
         url: "table.html",
       },
+      {
+        id: "shadows",
+        icon: "",
+        label: "Shadows",
+        url: "shadow.html",
+      },
     ],
     currentPage: null,
     get prevPage() {
