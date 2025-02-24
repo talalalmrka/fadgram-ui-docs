@@ -181,6 +181,7 @@ document.addEventListener('alpine:init', () => {
     drawerColorHash(color) {
       return '#' + this.drawerColorId(color);
     },
+    shadowClassName(size){return 'shadow-'+size;},
     get firstUrl() {
       const sidebar = document.getElementById('main-drawer');
       const sidebarBody = sidebar.querySelector('.drawer-body');
