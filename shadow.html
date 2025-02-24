@@ -1,0 +1,12 @@
+<h2>Shadows</h2>
+
+<h4 class="mt-4">Sizes</h4>
+
+<template x-for="size in sizes">
+<div class="mt-4">
+<h6 x-text="size"></h6>
+<div class="p-2" :class="()=>{return 'shadow-'+size}">
+this is shadow preview
+</div>
+</div>
+</template>
