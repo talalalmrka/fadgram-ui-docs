@@ -1,12 +1,52 @@
 <h2>Shadows</h2>
 
 <h4 class="mt-4">Sizes</h4>
+<h6 class="mt-4">xs</h6>
+<div class="p-2 rounded shadow-xs">
+    this is xs shadow preview
+</div>
+<h6 class="mt-4">sm</h6>
+<div class="p-2 rounded shadow-sm">
+    this is sm shadow preview
+</div>
+<h6 class="mt-4">Default</h6>
+<div class="p-2 rounded shadow">
+    this is default shadow preview
+</div>
+<h6 class="mt-4">md</h6>
+<div class="p-2 rounded shadow-md">
+    this is md shadow preview
+</div>
+<h6 class="mt-4">lg</h6>
+<div class="p-2 rounded shadow-lg">
+    this is lg shadow preview
+</div>
+<h6 class="mt-4">xl</h6>
+<div class="p-2 rounded shadow-xl">
+    this is xl shadow preview
+</div>
 
-<template x-for="size in sizes">
-<div class="mt-4">
-<h6 x-text="size"></h6>
-<div class="p-2 border rounded shadow" :class="shadowClassName(size)">
-this is shadow <span x-text="shadowClassName(size)"></span> preview
-</div>
-</div>
-</template>
+<pre class="mt-4"><code class="language-html">&lt;h6&gt;xs&lt;/h6&gt;
+    &lt;div class=&quot;p-2 rounded shadow-xs&quot;&gt;
+        this is xs shadow preview
+    &lt;/div&gt;
+    &lt;h6&gt;sm&lt;/h6&gt;
+    &lt;div class=&quot;p-2 rounded shadow-sm&quot;&gt;
+        this is sm shadow preview
+    &lt;/div&gt;
+    &lt;h6&gt;Default&lt;/h6&gt;
+    &lt;div class=&quot;p-2 rounded shadow&quot;&gt;
+        this is default shadow preview
+    &lt;/div&gt;
+    &lt;h6&gt;md&lt;/h6&gt;
+    &lt;div class=&quot;p-2 rounded shadow-md&quot;&gt;
+        this is md shadow preview
+    &lt;/div&gt;
+    &lt;h6&gt;lg&lt;/h6&gt;
+    &lt;div class=&quot;p-2 rounded shadow-lg&quot;&gt;
+        this is lg shadow preview
+    &lt;/div&gt;
+    &lt;h6&gt;xl&lt;/h6&gt;
+    &lt;div class=&quot;p-2 rounded shadow-xl&quot;&gt;
+        this is xl shadow preview
+    &lt;/div&gt;</code></pre>
