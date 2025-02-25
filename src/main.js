@@ -134,18 +134,24 @@ document.addEventListener('alpine:init', () => {
       },
     },
     async loadPage() {
-      if (this.currentPageUrl) {
-        const response = await fetch(this.currentPageUrl);
-        this.content = await response.text();
-        document.title = `${this.currentPage.label} | FadgramUI`;
-        setTimeout(function () {
-          initFadgramUI();
-          Prism.highlightAll();
-        }, 100);
+  if (this.currentPageUrl) {
+    try {
+      const response = await fetch(this.currentPageUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-
-
-    },
+      this.content = await response.text();
+      document.title = `${this.currentPage.label} | FadgramUI`;
+      setTimeout(function () {
+        initFadgramUI();
+        Prism.highlightAll();
+      }, 100);
+    } catch (error) {
+      console.error('Failed to load page:', error);
+      this.content = 'Failed to load content. Please try again later.';
+    }
+  }
+},
     get colors() {
       let filteredColors = _.pickBy(FadgramTheme().colors, (shades) => _.isObject(shades) && !_.isEmpty(shades));
       filteredColors = _.pickBy(
@@ -183,7 +189,6 @@ document.addEventListener('alpine:init', () => {
     },
     shadowClassName(size){
 const className = `shadow-${size}`;
-console.log("className: ", className);
 return className;},
     get firstUrl() {
       const sidebar = document.getElementById('main-drawer');
