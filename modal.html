@@ -1,0 +1,120 @@
+<h2>Modal</h2>
+<h4 class="mt-4">Basic usage</h4>
+
+<button type="button" class="btn primary mt-4" data-fg-toggle="modal" data-fg-target="#basic-modal">Open modal</button>
+<div id="basic-modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-fg-dismiss="modal">
+                    <i class="icon bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn secondary" data-fg-dismiss="modal">Close</button>
+                <button type="button" class="btn primary">Save</button>
+            </div>
+        </div><!-- Modal Content -->
+    </div><!-- Modal Dialog -->
+</div><!-- Modal -->
+
+<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn primary mt-4&quot; data-fg-toggle=&quot;modal&quot; data-fg-target=&quot;#basic-modal&quot;&gt;Open modal&lt;/button&gt;
+&lt;div id=&quot;basic-modal&quot; class=&quot;modal fade&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;h5 class=&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-fg-dismiss=&quot;modal&quot;&gt;
+                    &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn secondary&quot; data-fg-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn primary&quot;&gt;Save&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- Modal Content --&gt;
+    &lt;/div&gt;&lt;!-- Modal Dialog --&gt;
+&lt;/div&gt;&lt;!-- Modal --&gt;</code></pre>
+
+
+<h4 class="mt-4">Static backdrop</h4>
+<div class="alert alert-info">
+    the static backdrop modal does not close on click outside of it.
+</div>
+<button type="button" class="btn primary mt-4" data-fg-toggle="modal" data-fg-target="#static-modal">Open static
+    backdrop modal</button>
+<div id="static-modal" class="modal fade static-backdrop">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-fg-dismiss="modal">
+                    <i class="icon bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                    justo placerat sit amet.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn secondary" data-fg-dismiss="modal">Close</button>
+                <button type="button" class="btn primary">Save</button>
+            </div>
+        </div><!-- Modal Content -->
+    </div><!-- Modal Dialog -->
+</div><!-- Modal -->
+
+<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn primary mt-4&quot; data-fg-toggle=&quot;modal&quot; data-fg-target=&quot;#static-modal&quot;&gt;Open static backdrop modal&lt;/button&gt;
+&lt;div id=&quot;static-modal&quot; class=&quot;modal fade static-backdrop&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;h5 class=&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-fg-dismiss=&quot;modal&quot;&gt;
+                    &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pulvinar quam orci, in euismod
+                        justo placerat sit amet.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn secondary&quot; data-fg-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn primary&quot;&gt;Save&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- Modal Content --&gt;
+    &lt;/div&gt;&lt;!-- Modal Dialog --&gt;
+&lt;/div&gt;&lt;!-- Modal --&gt;</code></pre>

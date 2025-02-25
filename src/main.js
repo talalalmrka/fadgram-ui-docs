@@ -29,6 +29,12 @@ document.addEventListener('alpine:init', () => {
         url: "typography.html",
       },
       {
+        id: "background",
+        icon: "bi-palette",
+        label: "Background color",
+        url: "background.html",
+      },
+      {
         id: "buttons",
         icon: "bi-square",
         label: "Buttons",
@@ -42,7 +48,7 @@ document.addEventListener('alpine:init', () => {
       },
       {
         id: "forms",
-        icon: "bi-ui-check",
+        icon: "bi-ui-checks",
         label: "Forms",
         url: "form.html",
       },
@@ -96,9 +102,21 @@ document.addEventListener('alpine:init', () => {
       },
       {
         id: "shadows",
-        icon: "",
+        icon: "bi-cloud",
         label: "Shadows",
         url: "shadow.html",
+      },
+      {
+        id: "tooltips",
+        icon: "bi-chat-left-dots",
+        label: "Tooltips",
+        url: "tooltip.html",
+      },
+      {
+        id: "modal",
+        icon: "bi-window",
+        label: "Modal",
+        url: "modal.html",
       },
     ],
     currentPage: null,
@@ -121,37 +139,35 @@ document.addEventListener('alpine:init', () => {
     },
     content: 'Click a link to load content',
     sidebarLink: {
-      /*['@click.prevent']() {
-        //console.log('url', this.$el.href);
-        this.loadPage(this.$el.href);
-      },*/
+      ['@click']() {
+        this.$refs.mainDrawer.classList.remove('show');
+      },
       [':class']() {
-        //console.log(this.$el.href);
         return {
           'sidebar-link': true,
-          //'active': this.$el.hash === this.currentPageHash,
         };
       },
     },
     async loadPage() {
-  if (this.currentPageUrl) {
-    try {
-      const response = await fetch(this.currentPageUrl);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+      if (this.currentPageUrl) {
+        this.content = '<div class="text-center p-4">Loading...</div>';
+        try {
+          const response = await fetch(this.currentPageUrl);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          this.content = await response.text();
+          document.title = `${this.currentPage.label} | FadgramUI`;
+          setTimeout(function () {
+            initFadgramUI();
+            Prism.highlightAll();
+          }, 100);
+        } catch (error) {
+          console.error('Failed to load page:', error);
+          this.content = 'Failed to load content. Please try again later.';
+        }
       }
-      this.content = await response.text();
-      document.title = `${this.currentPage.label} | FadgramUI`;
-      setTimeout(function () {
-        initFadgramUI();
-        Prism.highlightAll();
-      }, 100);
-    } catch (error) {
-      console.error('Failed to load page:', error);
-      this.content = 'Failed to load content. Please try again later.';
-    }
-  }
-},
+    },
     get colors() {
       let filteredColors = _.pickBy(FadgramTheme().colors, (shades) => _.isObject(shades) && !_.isEmpty(shades));
       filteredColors = _.pickBy(
@@ -187,9 +203,10 @@ document.addEventListener('alpine:init', () => {
     drawerColorHash(color) {
       return '#' + this.drawerColorId(color);
     },
-    shadowClassName(size){
-const className = `shadow-${size}`;
-return className;},
+    shadowClassName(size) {
+      const className = `shadow-${size}`;
+      return className;
+    },
     get firstUrl() {
       const sidebar = document.getElementById('main-drawer');
       const sidebarBody = sidebar.querySelector('.drawer-body');

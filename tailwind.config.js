@@ -8,10 +8,11 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
     //'./node_modules/fadgram-ui/**/*.js'
   ],
+  safelist: [
+    //'modal-backdrop',
+  ],
   theme: {
-    extend: FadgramTheme({
-      //add custom theme here
-    }),
+    extend: FadgramTheme(),
   },
   plugins: [
     FadgramUI,

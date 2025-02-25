@@ -1,7 +1,7 @@
 {
   "name": "fadgram-ui-docs",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,7 +19,7 @@
     "@iconify-json/bi": "^1.2.2",
     "@iconify/tailwind": "^1.2.0",
     "alpinejs": "^3.14.8",
-    "fadgram-ui": "^0.1.0",
+    "fadgram-ui": "^0.1.1",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0"
   }

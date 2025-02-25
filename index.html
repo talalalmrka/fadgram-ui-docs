@@ -27,7 +27,7 @@
 <body x-data="fadgramUiDocs"
   class="relative font-poppins antialiased text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-900">
   <div class="min-h-screen">
-    <div class="drawer drawer-start bg-gray-100 dark:bg-gray-700 expand-lg" id="main-drawer">
+    <div class="drawer drawer-start bg-gray-100 dark:bg-gray-700 expand-lg" id="main-drawer" x-ref="mainDrawer">
       <div class="drawer-header flex space-x-2 items-center h-14">
         <div
           class="drawer-title grow text-center text-xl font-semibold bg-gradient-to-bl from-primary-600 to-rose-600 bg-clip-text text-transparent">
@@ -103,7 +103,7 @@
             </a>
           </template>
         </div>
-      </div>
+      </div><!-- container -->
     </main>
   </div>
   <script type="module" src="/src/main.js"></script>
