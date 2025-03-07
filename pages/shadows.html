@@ -1,0 +1,10 @@
+<h2>Shadows</h2>
+
+<h4 class="mt-4">Sizes</h4>
+<template x-for="shadow in shadowSizes">
+    <div class="mt-4">
+        <div class="section-title mb-4" x-text="shadow.label"></div>
+        <div class="p-2 rounded has-code" :class="shadow.class" x-text="'this is shadow '+shadow.label+' preview'">
+        </div>
+    </div>
+</template>

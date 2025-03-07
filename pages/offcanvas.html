@@ -1,16 +1,16 @@
-<h2>Drawer</h2>
+<h2>Offcanvas</h2>
 <h4 class="mt-4">Basic usage</h4>
-<button type="button" class="btn primary" data-fg-toggle="drawer" data-fg-target="#drawer-basic">
-    Toggle drawer
+<button type="button" class="btn btn-primary" data-fg-toggle="offcanvas" data-fg-target="#offcanvas-basic">
+    Toggle offcanvas
 </button>
-<div class="drawer bg-gray-50 dark:bg-gray-700" id="drawer-basic">
-    <div class="drawer-header flex space-x-2 items-center h-14">
-        <h3 class="drawer-title grow">FadgramUi</h3>
-        <button class="btn drawer-close">
+<div class="offcanvas bg-gray-50 dark:bg-gray-700" id="offcanvas-basic">
+    <div class="offcanvas-header flex space-x-2 items-center h-14">
+        <h3 class="offcanvas-title grow">FadgramUi</h3>
+        <button class="btn offcanvas-close">
             <i class="icon bi-x-lg"></i>
         </button>
     </div>
-    <div class="drawer-body">
+    <div class="offcanvas-body">
         <div class="nav vertical">
             <a href="#!" class="nav-link active">
                 <i class="icon bi-house-fill "></i> <span>Home</span>
@@ -30,14 +30,14 @@
         </div>
     </div>
 </div>
-<pre class="mt-4"><code class="language-html">&lt;div class=&quot;drawer bg-gray-50 dark:bg-gray-700&quot; id=&quot;drawer-basic&quot;&gt;
-    &lt;div class=&quot;drawer-header flex space-x-2 items-center h-14&quot;&gt;
-        &lt;h3 class=&quot;drawer-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
-        &lt;button class=&quot;btn drawer-close&quot;&gt;
+<pre class="mt-4"><code class="language-html">&lt;div class=&quot;offcanvas bg-gray-50 dark:bg-gray-700&quot; id=&quot;offcanvas-basic&quot;&gt;
+    &lt;div class=&quot;offcanvas-header flex space-x-2 items-center h-14&quot;&gt;
+        &lt;h3 class=&quot;offcanvas-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
+        &lt;button class=&quot;btn offcanvas-close&quot;&gt;
             &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;drawer-body&quot;&gt;
+    &lt;div class=&quot;offcanvas-body&quot;&gt;
         &lt;div class=&quot;nav vertical&quot;&gt;
             &lt;a href=&quot;#!&quot; class=&quot;nav-link active&quot;&gt;
                 &lt;i class=&quot;icon bi-house-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Home&lt;/span&gt;
@@ -61,19 +61,19 @@
 <template x-for="position in ['start', 'end', 'top', 'bottom']">
     <div>
         <h6 class="mt-4" x-text="position"></h6>
-        <button type="button" class="btn primary" data-fg-toggle="drawer"
-            :data-fg-target="drawerPositionHash(position)">
-            Toggle drawer
+        <button type="button" class="btn btn-primary" data-fg-toggle="offcanvas"
+            :data-fg-target="offcanvasPositionHash(position)">
+            Toggle offcanvas
         </button>
-        <div class="drawer bg-gray-50 dark:bg-gray-700" :class="drawerPositionClassName(position)"
-            :id="drawerPositionId(position)">
-            <div class="drawer-header flex space-x-2 items-center h-14">
-                <h3 class="drawer-title grow">FadgramUi</h3>
-                <button class="btn drawer-close">
+        <div class="offcanvas bg-gray-50 dark:bg-gray-700" :class="offcanvasPositionClassName(position)"
+            :id="offcanvasPositionId(position)">
+            <div class="offcanvas-header flex space-x-2 items-center h-14">
+                <h3 class="offcanvas-title grow">FadgramUi</h3>
+                <button class="btn offcanvas-close">
                     <i class="icon bi-x-lg"></i>
                 </button>
             </div>
-            <div class="drawer-body">
+            <div class="offcanvas-body">
                 <div class="nav vertical">
                     <a href="#!" class="nav-link active">
                         <i class="icon bi-house-fill "></i> <span>Home</span>
@@ -96,17 +96,17 @@
     </div>
 </template>
 <div class="alert alert-info p-1 my-4">replace {position} with position: (start, end, top, bottom)</div>
-<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn primary&quot; data-fg-toggle=&quot;drawer&quot; data-fg-target=&quot;#drawer-position-{position}&quot;&gt;
-    Toggle drawer
+<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-fg-toggle=&quot;offcanvas&quot; data-fg-target=&quot;#offcanvas-position-{position}&quot;&gt;
+    Toggle offcanvas
 &lt;/button&gt;
-&lt;div class=&quot;drawer drawer-{position} bg-gray-50 dark:bg-gray-700&quot; id=&quot;drawer-position-{position}&quot;&gt;
-    &lt;div class=&quot;drawer-header flex space-x-2 items-center h-14&quot;&gt;
-        &lt;h3 class=&quot;drawer-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
-        &lt;button class=&quot;btn drawer-close&quot;&gt;
+&lt;div class=&quot;offcanvas offcanvas-{position} bg-gray-50 dark:bg-gray-700&quot; id=&quot;offcanvas-position-{position}&quot;&gt;
+    &lt;div class=&quot;offcanvas-header flex space-x-2 items-center h-14&quot;&gt;
+        &lt;h3 class=&quot;offcanvas-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
+        &lt;button class=&quot;btn offcanvas-close&quot;&gt;
             &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;drawer-body&quot;&gt;
+    &lt;div class=&quot;offcanvas-body&quot;&gt;
         &lt;div class=&quot;nav vertical&quot;&gt;
             &lt;a href=&quot;#!&quot; class=&quot;nav-link active&quot;&gt;
                 &lt;i class=&quot;icon bi-house-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Home&lt;/span&gt;
@@ -128,21 +128,22 @@
 &lt;/div&gt;</code></pre>
 
 <h4 class="mt-4">Colors</h4>
-<template x-for="(shades, color) in colors">
+<!-- class="offcanvas-primary offcanvas-secondary offcanvas-red offcanvas-green offcanvas-blue offcanvas-cyan offcanvas-sky"-->
+<template x-for="color in colors">
     <div>
         <h6 class="mt-4" x-text="color"></h6>
-        <button type="button" class="btn" :class="color" data-fg-toggle="drawer"
-            :data-fg-target="drawerColorHash(color)">
-            Toggle drawer
+        <button type="button" class="btn" :class="'btn-'+color" data-fg-toggle="offcanvas"
+            :data-fg-target="offcanvasColorHash(color)">
+            Toggle offcanvas
         </button>
-        <div class="drawer" :class="color" :id="drawerColorId(color)">
-            <div class="drawer-header flex space-x-2 items-center h-14">
-                <h3 class="drawer-title grow">FadgramUi</h3>
-                <button class="btn drawer-close">
+        <div class="offcanvas" :class="'offcanvas-'+color" :id="offcanvasColorId(color)">
+            <div class="offcanvas-header flex space-x-2 items-center h-14">
+                <h3 class="offcanvas-title grow">FadgramUi</h3>
+                <button class="btn offcanvas-close">
                     <i class="icon bi-x-lg"></i>
                 </button>
             </div>
-            <div class="drawer-body">
+            <div class="offcanvas-body">
                 <div class="nav vertical">
                     <a href="#!" class="nav-link active">
                         <i class="icon bi-house-fill "></i> <span>Home</span>
@@ -165,17 +166,17 @@
     </div>
 </template>
 <div class="alert alert-info p-1 my-4">replace {color} with color name: (primary, secondary, red, ...etc)</div>
-<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn primary&quot; data-fg-toggle=&quot;drawer&quot; data-fg-target=&quot;#drawer-color-{color}&quot;&gt;
-    Toggle drawer
+<pre class="mt-4"><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-fg-toggle=&quot;offcanvas&quot; data-fg-target=&quot;#offcanvas-color-{color}&quot;&gt;
+    Toggle offcanvas
 &lt;/button&gt;
-&lt;div class=&quot;drawer {color}&quot; id=&quot;drawer-color-{color}&quot;&gt;
-    &lt;div class=&quot;drawer-header flex space-x-2 items-center h-14&quot;&gt;
-        &lt;h3 class=&quot;drawer-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
-        &lt;button class=&quot;btn drawer-close&quot;&gt;
+&lt;div class=&quot;offcanvas {color}&quot; id=&quot;offcanvas-color-{color}&quot;&gt;
+    &lt;div class=&quot;offcanvas-header flex space-x-2 items-center h-14&quot;&gt;
+        &lt;h3 class=&quot;offcanvas-title grow&quot;&gt;FadgramUi&lt;/h3&gt;
+        &lt;button class=&quot;btn offcanvas-close&quot;&gt;
             &lt;i class=&quot;icon bi-x-lg&quot;&gt;&lt;/i&gt;
         &lt;/button&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;drawer-body&quot;&gt;
+    &lt;div class=&quot;offcanvas-body&quot;&gt;
         &lt;div class=&quot;nav vertical&quot;&gt;
             &lt;a href=&quot;#!&quot; class=&quot;nav-link active&quot;&gt;
                 &lt;i class=&quot;icon bi-house-fill &quot;&gt;&lt;/i&gt; &lt;span&gt;Home&lt;/span&gt;

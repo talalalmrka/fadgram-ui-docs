@@ -1,0 +1,79 @@
+<h2>Buttons</h2>
+<h4>Basic usage:</h4>
+<button type="button" role="button" class="btn btn-primary has-code">Button</button>
+<h4 class="mt-5">Colors:</h4>
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+    <template x-for="color in colors">
+        <button class="btn" :class="'btn-'+color" x-text="color"></button>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;button class=&quot;btn btn-{color}&quot;&gt;Button&lt;/button&gt;</code></pre>
+
+<h4 class="mt-5">Gradient</h4>
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+    <template x-for="color in colors">
+        <button class="btn gradient" :class="'btn-'+color" x-text="color"></button>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;button class=&quot;btn btn-{color} gradient&quot;&gt;Button&lt;/button&gt;</code></pre>
+<h4 class="mt-5">Pill</h4>
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+    <template x-for="color in colors">
+        <button class="btn pill" :class="'btn-'+color" x-text="color"></button>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;button class=&quot;btn btn-{color} pill&quot;&gt;Button&lt;/button&gt;</code></pre>
+
+<h4 class="mt-5">Sizes</h4>
+<small>supported sizes: xs, sm, lg, xl</small>
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+    <template x-for="size in sizes">
+        <button class="btn btn-primary" :class="size" x-text="size"></button>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;button class=&quot;btn {size}&quot;&gt;Button&lt;/button&gt;</code></pre>
+
+
+<h2 class="mt-5">Button group</h2>
+<h4 class="mt-5 mb-4">Basic usage:</h4>
+<div class="btn-group has-code">
+    <button type="button" class="btn btn-primary">
+        Button 1
+    </button>
+    <button type="button" class="btn btn-primary">
+        Button 2
+    </button>
+    <button type="button" class="btn btn-primary">
+        Button 3
+    </button>
+    <button type="button" class="btn btn-primary">
+        Button 4
+    </button>
+</div>
+
+<h4 class="mt-5 mb-4">Sizes</h4>
+<template x-for="size in sizes">
+    <div class="mt-4">
+        <h6 x-text="size"></h6>
+        <div class="overflow-x-auto w-full">
+            <div class="btn-group has-code" :class="size" data-exclude-atts=":class">
+                <button type="button" class="btn btn-primary">
+                    Button 1
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Button 2
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Button 3
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Button 4
+                </button>
+            </div>
+        </div>
+    </div>
+</template>

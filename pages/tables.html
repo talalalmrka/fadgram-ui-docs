@@ -1,0 +1,176 @@
+<h2>Tables</h2>
+<h4 class="mt-4">Basic usage</h4>
+<div class="table-container has-code">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Creation date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Dan Emard MD</td>
+                <td>osinski.cristopher@yahoo.com</td>
+                <td>2001-03-13</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sonia Leuschke</td>
+                <td>lucy15@schoen.com</td>
+                <td>2015-02-27</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Celia Hamill</td>
+                <td>uwhite@yahoo.com</td>
+                <td>1984-11-01</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dr. Gilbert Rogahn Sr.</td>
+                <td>hpagac@tremblay.biz</td>
+                <td>1978-07-31</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Franz Stamm</td>
+                <td>deja10@gusikowski.com</td>
+                <td>2006-07-26</td>
+            </tr>
+
+            <!-- More rows -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Creation date</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<template x-for="type in tableTypes">
+    <div class="mt-4">
+        <h4 class="mt-4" x-text="type.label"></h4>
+        <div class="table-container has-code">
+            <table class="table" :class="type.class">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Creation date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Dan Emard MD</td>
+                        <td>osinski.cristopher@yahoo.com</td>
+                        <td>2001-03-13</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Sonia Leuschke</td>
+                        <td>lucy15@schoen.com</td>
+                        <td>2015-02-27</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Celia Hamill</td>
+                        <td>uwhite@yahoo.com</td>
+                        <td>1984-11-01</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Dr. Gilbert Rogahn Sr.</td>
+                        <td>hpagac@tremblay.biz</td>
+                        <td>1978-07-31</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Franz Stamm</td>
+                        <td>deja10@gusikowski.com</td>
+                        <td>2006-07-26</td>
+                    </tr>
+
+                    <!-- More rows -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Creation date</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</template>
+
+<h4 class="mt-4">Sizes</h4>
+<template x-for="size in sizes" :key="size">
+    <div>
+        <h6 class="mt-4" x-text="size"></h6>
+        <div class="table-container has-code">
+            <table class="table" :class="size">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Creation date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Dan Emard MD</td>
+                        <td>osinski.cristopher@yahoo.com</td>
+                        <td>2001-03-13</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Sonia Leuschke</td>
+                        <td>lucy15@schoen.com</td>
+                        <td>2015-02-27</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Celia Hamill</td>
+                        <td>uwhite@yahoo.com</td>
+                        <td>1984-11-01</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Dr. Gilbert Rogahn Sr.</td>
+                        <td>hpagac@tremblay.biz</td>
+                        <td>1978-07-31</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Franz Stamm</td>
+                        <td>deja10@gusikowski.com</td>
+                        <td>2006-07-26</td>
+                    </tr>
+
+                    <!-- More rows -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Creation date</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</template>

@@ -1,22 +1,85 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import "prismjs/themes/prism-okaidia.min.css";
+@import "fadgram-ui";
 
-body {
-    @apply m-0 p-0;
+@theme {
+    --font-poppins: Poppins, sans-serif;
 }
 
-#main-drawer {
+body {
+    @apply relative font-poppins antialiased;
+    @apply text-gray-700 dark:text-gray-100;
+    @apply bg-white dark:bg-gray-900;
+}
+
+#main-offcanvas {
     .nav-link {
+
+        &:hover,
         &.active {
-            @apply text-white bg-primary rounded-full dark:text-primary dark:bg-white;
+            @apply text-white bg-primary-500 rounded-full dark:text-primary-500 dark:bg-white;
         }
     }
 }
 
+pre[class*=language-] {
+    margin: 0 !important;
+    padding: 0.7em !important;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
-    font-size: 14px !important;
-    max-height: 350px;
+    font-size: 13px !important;
+    font-family: var(--font-mono) !important;
+    /*max-height: 350px;*/
     overflow: auto;
+}
+
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+    background: transparent !important;
+}
+
+.icon {
+    &.overview-card-icon {
+        height: calc(var(--spacing)* 10) !important;
+        width: calc(var(--spacing)* 10) !important;
+    }
+}
+
+.code-container {
+    @apply relative mt-4 bg-gray-800 rounded;
+}
+
+.code-toolbar {
+    @apply text-xs flex justify-between items-center text-gray-200 bg-gray-800 rounded-t px-2 py-1 border-b border-gray-700;
+}
+
+.btn-copy-code {
+    @apply hover:text-white;
+}
+
+h4 {
+    @apply font-semibold text-slate-900 dark:text-slate-200;
+}
+
+.section-title {
+    @apply capitalize text-sm font-semibold text-slate-900 dark:text-slate-200 2xl:col-end-1 2xl:pt-2.5;
+}
+
+.section-title-base {
+    @apply capitalize text-base font-semibold text-slate-900 dark:text-slate-200 2xl:col-end-1 2xl:pt-2.5;
+}
+
+.section-title-lg {
+    @apply capitalize text-lg font-semibold text-slate-900 dark:text-slate-200 2xl:col-end-1 2xl:pt-2.5;
+}
+
+.color-container {
+    @apply 2xl:contents mb-4;
+}
+
+.color-container-grid {
+    @apply grid mt-3 grid-cols-1 sm:grid-cols-11 gap-y-3 gap-x-2 sm:mt-2 2xl:mt-0;
 }

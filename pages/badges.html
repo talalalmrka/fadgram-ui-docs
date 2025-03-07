@@ -1,0 +1,51 @@
+<h2>Badge</h2>
+<h4>Basic Usage:</h4>
+
+<div class="has-code mt-4" data-source="inner">
+    <span class="badge">Badge</span>
+</div>
+<h4 class="mt-4">Colors</h4>
+<div class="flex gap-4 flex-wrap mb-4 items-baseline">
+    <template x-for="color in colors" :key="color">
+        <div>
+            <span class="badge" :class="'badge-'+color" x-text="color"></span>
+        </div>
+    </template>
+</div>
+<div class="alert alert-info">replace {color} with the color name.</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge badge-{color}&quot;&gt;badge&lt;/span&gt;</code></pre>
+
+<h4 class="mt-4">Outline badge</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="color in colors" :key="color">
+        <div>
+            <span class="badge badge-outline" :class="'badge-'+color" x-text="color"></span>
+        </div>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge badge-outline badge-{color}&quot;&gt;badge&lt;/span&gt;</code></pre>
+<h4 class="mt-4">Badge pill</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="color in colors" :key="color">
+        <div>
+            <span class="badge pill" :class="'badge-'+color" x-text="color"></span>
+        </div>
+    </template>
+</div>
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge pill badge-{color}&quot;&gt;badge&lt;/span&gt;</code></pre>
+
+<h4 class="mt-4">Sizes</h4>
+<div class="flex gap-3 flex-wrap mb-4 items-baseline">
+    <template x-for="size in sizes" :key="size">
+        <div>
+            <span class="badge badge-primary" :class="size" x-text="size"></span>
+        </div>
+    </template>
+</div>
+<div class="alert alert-info">replace {size} with the size (xs, sm, lg, xl).</div>
+
+<pre
+    class="mt-4"><code class="language-html">&lt;span class=&quot;badge badge-primary {size}&quot;&gt;badge&lt;/span&gt;</code></pre>

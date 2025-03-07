@@ -1,0 +1,118 @@
+<h2>Card</h2>
+<h4 class="my-4">Basic Usage</h4>
+<div class="card has-code">
+    <div class="card-header">
+        <h5 class="card-title">Card title</h5>
+    </div>
+    <div class="card-body">
+        <p>Voluptatum dolor dignissimos laboriosam consectetur totam laborum rerum.</p>
+        <p>Ut iste in dolorem natus dolorum et possimus.</p>
+        <p>Et hic minus doloribus fugit voluptatem excepturi mollitia quis.</p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary sm">Button</button>
+    </div>
+</div>
+
+<h4 class="my-4">Colors</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <template x-for="color in colors">
+        <div class="col">
+            <h6 class="mb-4" x-text="color"></h6>
+            <div class="card" :class="'card-'+color">
+                <div class="card-header">
+                    <h5 class="card-title">Card title</h5>
+                </div>
+                <div class="card-body">
+                    <p>Voluptatum dolor dignissimos laboriosam consectetur totam laborum rerum.</p>
+                    <p>Ut iste in dolorem natus dolorum et possimus.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary sm">Button</button>
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+
+<h4 class="mt-5">Usage</h4>
+<div class="alert alert-info mt-4">
+    replace {color} with the color name.
+</div>
+<pre class="mt-4"><code class="language-html">&lt;div class=&quot;card card-{color}&quot;&gt;
+    ...
+&lt;/div&gt;</code></pre>
+
+
+<h2 class="mt-4">Overview card</h2>
+
+<h4 class="mt-4">Basic usage</h4>
+<div class="overview-card has-code max-w-64" data-exclude-classes="max-w-64">
+    <div class="flex items-center justify-between">
+        <div>
+            <div class="overview-card-title">Users</div>
+            <div class="overview-card-number">30</div>
+        </div>
+        <div>
+            <i class="icon bi-people-fill overview-card-icon"></i>
+        </div>
+    </div>
+</div>
+
+<h2 class="mt-4">Overview card layout</h2>
+<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-4 has-code">
+    <div class="col">
+        <div class="overview-card overview-card-blue">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="overview-card-title">Users</div>
+                    <div class="overview-card-number">30</div>
+                </div>
+                <div>
+                    <i class="icon bi-people-fill overview-card-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div><!-- col -->
+    <div class="col">
+        <div class="overview-card overview-card-green">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="overview-card-title">Posts</div>
+                    <div class="overview-card-number">30</div>
+                </div>
+                <div>
+                    <i class="icon bi-newspaper overview-card-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div><!-- col -->
+    <!-- Users -->
+    <div class="col">
+        <div class="overview-card overview-card-yellow">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="overview-card-title">Products</div>
+                    <div class="overview-card-number">300</div>
+                </div>
+                <div>
+                    <i class="icon bi-bag-fill overview-card-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div><!-- col -->
+    <!-- Users -->
+    <div class="col">
+        <div class="card overview-card overview-card-cyan">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="overview-card-title">Views</div>
+                    <div class="overview-card-number">13.6k</div>
+                </div>
+                <div>
+                    <i class="icon bi-eye-fill overview-card-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div><!-- col -->
+</div>

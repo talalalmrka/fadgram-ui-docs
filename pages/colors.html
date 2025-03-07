@@ -1,0 +1,21 @@
+<h2>Colors</h2>
+<template x-for="color in colors">
+    <div class="color-container">
+        <div class="section-title" x-text="color"></div>
+        <div class="color-container-grid">
+            <template x-for="shade in shades">
+                <div class="relative flex">
+                    <div class="flex items-center gap-x-3 w-full cursor-pointer sm:block sm:space-y-1.5">
+                        <div class="h-10 w-10 rounded dark:ring-1 dark:ring-inset dark:ring-white/10 sm:w-full"
+                            :class="shadeClassName(color, shade)"></div>
+                        <div class="px-0.5">
+                            <div class="w-6 font-medium text-xs text-slate-900 2xl:w-full dark:text-white"
+                                x-text="shade">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>
