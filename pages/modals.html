@@ -1,0 +1,55 @@
+<h2>Modal</h2>
+<h4 class="mt-4">Basic usage</h4>
+<div class="has-code" data-source="inner">
+    <button type="button" class="btn btn-primary mt-4" data-fg-toggle="modal" data-fg-target="#basic-modal">
+        Open modal
+    </button>
+    <div id="basic-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-fg-dismiss="modal">
+                        <i class="icon bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Modal body
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-fg-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div><!-- Modal Content -->
+        </div><!-- Modal Dialog -->
+    </div><!-- Modal -->
+</div>
+
+<h4 class="mt-4">Static backdrop</h4>
+<div class="alert alert-info">
+    the static backdrop modal does not close on click outside of it.
+</div>
+<div class="has-code" data-source="inner">
+    <button type="button" class="btn btn-primary mt-4" data-fg-toggle="modal" data-fg-target="#static-modal">
+        Open modal with static backdrop
+    </button>
+    <div id="static-modal" class="modal fade static-backdrop">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-fg-dismiss="modal">
+                        <i class="icon bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Modal body
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-fg-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div><!-- Modal Content -->
+        </div><!-- Modal Dialog -->
+    </div><!-- Modal -->
+</div>

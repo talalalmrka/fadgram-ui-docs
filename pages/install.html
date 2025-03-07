@@ -1,0 +1,75 @@
+<h2>Quick start</h2>
+<p>
+    Fadgram UI is a Tailwind CSS plugin that provides a set of custom utility classes to enhance your web
+    development experience. This plugin is designed to work seamlessly with Tailwind CSS, allowing you to
+    quickly and easily style your web applications.
+</p>
+<h2 class="mt-5">Requirments</h2>
+<p>
+    this plugin requires <a class="link" href="https://tailwindcss.com/">Tailwindcss v4</a>
+    if your project uses <a class="link" href="https://v3.tailwindcss.com/">Tailwindcss v3</a> you must install our
+    plugin compatible
+    with tailwindcss v3 <a class="link" href="https://talalalmrka.github.io/fadgram-ui-docs3/">Fadgram UI 3
+        Documentation</a>.
+</p>
+<h2 class="mt-5">Installation</h2>
+<p>
+    To install Fadgram UI, you need to have Tailwind CSS 4 already set up in your project. If you haven't set up
+    Tailwind CSS yet, follow the official installation guide.
+    Once Tailwind CSS is set up, you can install Fadgram UI via npm:
+</p>
+<pre data-file-name="bash"><code class="language-bash">npm i fadgram-ui</code></pre>
+<h2 class="mt-5">Usage:</h2>
+<h4 class="mt-4">1. Add the plugin to your main style file like (app.css or main.css).</h4>
+<p>
+    To use Fadgram UI in your project, you need to import it in your main style file like: (main.css or app.css) or
+    any main style file after import tailwindcss.
+</p>
+<pre class="mt-4" data-file-name="app.css"><code class="language-css">@import "tailwindcss";
+@plugin "fadgram-ui";</code>
+</pre>
+
+
+<h4 class="mt-4">2. Add the plugin javascript helpers to your main js file(app.js or main.js).</h4>
+<p>
+    Add javascript helpers to your main javascript file (main.js) or (app.js).
+    javascript helpers required by some components like (dropdown, modal, tooltip, offcanvas, tabs, toast ...etc).
+</p>
+<pre data-file-name="app.js" class="mt-4"><code class="language-javascript">import "fadgram-ui/helpers";</code></pre>
+<h6 class="mt-4 section-title-lg">Javascript modules.</h6>
+<div class="section-title mt-4">Initialize all components helpers:</div>
+<pre data-file-name="app.js" class="mt-4"><code class="language-javascript">import { initFadgramUI } from "fadgram-ui/helpers";
+document.addEventListener('DOMContentLoaded', () => {
+    initFadgramUI();
+});</code></pre>
+
+<div class="section-title mt-4">How initFadgramUI works?</div>
+<pre data-file-name="app.js" class="mt-4"><code class="language-javascript">import { DarkModeManager } from "./dark-mode-manager";
+import { RtlToggler } from "./rtl-toggler";
+import { Dropdown } from "./dropdown";
+import { NavBar } from "./navbar";
+import { Offcanvas } from "./offcanvas";
+import { Tooltip } from "./tooltip";
+import { Modal } from "./modal";
+import { ButtonBackTop } from "./button-backtop";
+import { PasswordToggle } from "./password-toggle";
+
+export const initFadgramUI = () => {
+    DarkModeManager.init();
+    RtlToggler.init();
+    ButtonBackTop.init();
+    Dropdown.init();
+    NavBar.init();
+    Offcanvas.init();
+    Tooltip.init();
+    Modal.init();
+    PasswordToggle.init();
+}
+document.addEventListener('DOMContentLoaded', () => {
+    initFadgramUI();
+});</code></pre>
+<div class="section-title mt-4">Initialize required components helpers only:</div>
+<pre data-file-name="app.js" class="mt-4"><code class="language-javascript">import { Dropdown } from "fadgram-ui/helpers";
+document.addEventListener('DOMContentLoaded', () => {
+    Dropdown.init();
+});</code></pre>

@@ -1,0 +1,23 @@
+<h2>Progress</h2>
+<h4 class="mt-4">Basic usage</h4>
+<div class="progress has-code" role="progressbar">
+    <div class="progress-bar" style="width: 75%;">75%</div>
+</div>
+<h4 class="mt-4">Colors</h4>
+<template x-for="color in colors">
+    <div class="mb-4">
+        <div class="section-title" x-text="color"></div>
+        <div class="progress has-code" :class="'progress-'+color" role="progressbar">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+        </div>
+    </div>
+</template>
+<h4 class="mt-4">Sizes</h4>
+<template x-for="size in sizes">
+    <div class="mb-4">
+        <div class="section-title" x-text="size"></div>
+        <div class="progress has-code" :class="size" role="progressbar">
+            <div class="progress-bar" style="width: 75%;">75%</div>
+        </div>
+    </div>
+</template>

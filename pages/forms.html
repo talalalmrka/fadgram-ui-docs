@@ -1,0 +1,292 @@
+<h2>Forms</h2>
+<h4 class="mt-5 mb-4">Form controls</h4>
+<div class="section-title mb-4">Basic usage</div>
+<input type="text" class="form-control has-code" placeholder="Username">
+
+<div class="section-title mt-5 mb-4">Form control icons</div>
+<h4 class="mt-4">Start icon</h4>
+<div class="form-control-container has-code">
+    <i class="icon bi-person start-icon"></i>
+    <input type="text" class="form-control has-start-icon" placeholder="username">
+</div>
+<h4 class="mt-4">End icon</h4>
+<div class="form-control-container has-code">
+    <input type="text" class="form-control has-end-icon" placeholder="url">
+    <i class="icon bi-clipboard end-icon"></i>
+</div>
+<h4 class="mt-4">Start and end icons</h4>
+<div class="form-control-container has-code">
+    <i class="icon bi-globe start-icon"></i>
+    <input type="text" class="form-control has-start-icon has-end-icon" placeholder="url">
+    <i class="icon bi-clipboard end-icon"></i>
+</div>
+
+<div class="section-title mt-5 mb-4">Password toggle</div>
+<input type="password" class="form-control" placeholder="insert password">
+<pre
+    class="mt-4"><code class="language-html">&lt;input type=&quot;password&quot; class=&quot;form-control&quot; placeholder=&quot;insert password&quot;&gt;</code></pre>
+
+<div class="section-title mt-5 mb-4">Form layout</div>
+<div class="grid grid-cols-1 gap-3 has-code">
+    <div class="col">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="col">
+                <label for="first_name" class="form-label">First name</label>
+                <input id="first_name" type="text" class="form-control" placeholder="insert text first name...">
+                <div class="form-info">first name info</div>
+            </div>
+            <div class="col">
+                <label for="last_name" class="form-label">Last name</label>
+                <input id="last_name" type="text" class="form-control" placeholder="insert text last name...">
+                <div class="form-info">last name info</div>
+            </div>
+            <div class="col">
+                <label for="gender" class="form-label">Gender</label>
+                <select id="gender" class="form-select">
+                    <option value="m">Male</option>
+                    <option value="1">Female</option>
+                </select>
+                <div class="form-info">select gender info</div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-check">
+            <input type="checkbox" id="agree" value="1">
+            <label for="agree">Agree policy</label>
+        </div>
+    </div>
+    <div class="col">
+        <label class="form-label">Select country</label>
+        <div class="form-radio">
+            <input type="radio" id="country-1" name="countries" value="usa">
+            <label for="country-1">United states</label>
+        </div>
+        <div class="form-radio">
+            <input type="radio" id="country-2" name="countries" value="uk">
+            <label for="country-2">United kindom</label>
+        </div>
+        <div class="form-radio disabled">
+            <input type="radio" id="country-3" name="countries" value="germany" disabled>
+            <label for="country-3">Germany</label>
+        </div>
+    </div>
+    <div class="col">
+        <label class="form-switch">
+            <input type="checkbox">
+            <span class="toggle-slider"></span>
+            <span class="form-switch-label">Toggle</span>
+        </label>
+    </div>
+    <div class="col">
+        <label for="bio" class="form-label">Bio</label>
+        <textarea id="bio" class="form-control" rows="4" placeholder="insert some bio about you..."></textarea>
+        <div class="form-info">bio info</div>
+    </div>
+    <div class="col">
+        <button type="button" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+
+<h4 class="mt-4">Sizes</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4 has-code">
+    <div class="col">
+        <label for="xs-input" class="form-label">Extra small input</label>
+        <input id="xs-input" type="text" class="form-control xs" placeholder="insert text...">
+        <div class="form-info">Extra small input info</div>
+    </div>
+    <div class="col">
+        <label for="sm-input" class="form-label">Small input</label>
+        <input id="sm-input" type="text" class="form-control sm" placeholder="insert text...">
+        <div class="form-info">Small input info</div>
+    </div>
+    <div class="col">
+        <label for="default-input" class="form-label">Default input</label>
+        <input id="default-input" type="text" class="form-control" placeholder="insert text...">
+        <div class="form-info">Default input info</div>
+    </div>
+    <div class="col">
+        <label for="lg-input" class="form-label">Large input</label>
+        <input id="lg-input" type="text" class="form-control lg" placeholder="insert text...">
+        <div class="form-info">Large input info</div>
+    </div>
+    <div class="col">
+        <label for="xl-input" class="form-label">X-Large input</label>
+        <input id="xl-input" type="text" class="form-control xl" placeholder="insert text...">
+        <div class="form-info">X-Large input info</div>
+    </div>
+    <div class="col">
+        <label for="xxl-input" class="form-label">XX-Large input</label>
+        <input id="xxl-input" type="text" class="form-control xxl" placeholder="insert text...">
+        <div class="form-info">XX-Large input info</div>
+    </div>
+</div>
+
+<h4 class="mt-4">Validations</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3 has-code">
+    <div class="col">
+        <label for="success-input" class="form-label success">Success input</label>
+        <input id="success-input" type="text" class="form-control success" placeholder="insert text...">
+        <div class="form-info success">Success input info</div>
+    </div>
+    <div class="col">
+        <label for="error-input" class="form-label error">Error input</label>
+        <input id="error-input" type="text" class="form-control error" placeholder="insert text...">
+        <div class="form-info error">Error input info</div>
+    </div>
+    <div class="col">
+        <label for="bio-success" class="form-label success">Bio</label>
+        <textarea id="bio-success" class="form-control success" rows="3"
+            placeholder="insert some bio about you..."></textarea>
+        <div class="form-info success">success bio info</div>
+    </div>
+    <div class="col">
+        <label for="bio-error" class="form-label error">Bio</label>
+        <textarea id="bio-error" class="form-control error" rows="3"
+            placeholder="insert some bio about you..."></textarea>
+        <div class="form-info error">Error bio info</div>
+    </div>
+    <div class="col">
+        <label for="gender-success" class="form-label success">Gender</label>
+        <select id="gender-success" class="form-select success">
+            <option value="m">Male</option>
+            <option value="1">Female</option>
+        </select>
+        <div class="form-info success">select gender info</div>
+    </div>
+    <div class="col">
+        <label for="gender-error" class="form-label error">Gender</label>
+        <select id="gender-error" class="form-select error">
+            <option value="m">Male</option>
+            <option value="1">Female</option>
+        </select>
+        <div class="form-info error">select gender info</div>
+    </div>
+    <div class="col">
+        <div class="form-check success">
+            <input type="checkbox" id="agree-success" value="1">
+            <label for="agree-success">Agree policy</label>
+        </div>
+    </div>
+    <div class="col">
+        <div class="form-check error">
+            <input type="checkbox" id="agree-error" value="1">
+            <label for="agree-error">Agree policy</label>
+        </div>
+    </div>
+    <div class="col">
+        <label class="form-switch success">
+            <input type="checkbox">
+            <span class="toggle-slider"></span>
+            <span class="form-switch-label">Toggle</span>
+        </label>
+    </div>
+    <div class="col">
+        <label class="form-switch error">
+            <input type="checkbox">
+            <span class="toggle-slider"></span>
+            <span class="form-switch-label">Toggle</span>
+        </label>
+    </div>
+</div>
+
+<h2 class="mt-4">Input group</h2>
+<div class="input-group mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select class="form-select">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h4 class="mt-4">Sizes</h4>
+
+<h6 class="mt-4">xs</h6>
+<div class="input-group xs mb-4">
+    <input type="text" class="form-control" placeholder="write text...">
+    <input type="text" class="form-control" placeholder="write text...">
+    <select id="" class="form-select">
+        <option value="m">Male</option>
+        <option value="1">Female</option>
+    </select>
+</div>
+
+<pre><code class="language-html">&lt;div class=&quot;input-group xs&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h6 class="mt-4">sm</h6>
+<div class="overflow-x-auto">
+    <div class="input-group sm mb-4">
+        <input type="text" class="form-control" placeholder="write text...">
+        <input type="text" class="form-control" placeholder="write text...">
+        <select id="" class="form-select">
+            <option value="m">Male</option>
+            <option value="1">Female</option>
+        </select>
+    </div>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;input-group sm&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h6 class="mt-4">lg</h6>
+<div class="overflow-x-auto">
+    <div class="input-group lg mb-4">
+        <input type="text" class="form-control" placeholder="write text...">
+        <input type="text" class="form-control" placeholder="write text...">
+        <select id="" class="form-select">
+            <option value="m">Male</option>
+            <option value="1">Female</option>
+        </select>
+    </div>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;input-group lg&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>
+
+<h6 class="mt-4">xl</h6>
+<div class="overflow-x-auto">
+    <div class="input-group xl mb-4">
+        <input type="text" class="form-control" placeholder="write text...">
+        <input type="text" class="form-control" placeholder="write text...">
+        <select id="" class="form-select">
+            <option value="m">Male</option>
+            <option value="1">Female</option>
+        </select>
+    </div>
+</div>
+<pre><code class="language-html">&lt;div class=&quot;input-group xl&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
+    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
+        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;</code></pre>

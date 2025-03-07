@@ -1,0 +1,26 @@
+<h2>Dropdown</h2>
+
+<h4>Basic example</h4>
+<div class="dropdown has-code">
+    <button class="btn btn-primary dropdown-toggle">Dropdown toggle</button>
+    <div class="dropdown-menu">
+        <a href="#!" class="dropdown-link">Dropdown link 1</a>
+        <a href="#!" class="dropdown-link">Dropdown link 2</a>
+        <a href="#!" class="dropdown-link">Dropdown link 3</a>
+        <a href="#!" class="dropdown-link">Dropdown link 4</a>
+    </div>
+</div>
+<h4 class="my-5">Positions</h4>
+<template x-for="position in dropdownPositions">
+    <div class="mt-4 has-code" data-source="inner">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" x-text="position.label"></button>
+            <div class="dropdown-menu" :class="position.class">
+                <a href="#!" class="dropdown-link">Dropdown link 1</a>
+                <a href="#!" class="dropdown-link">Dropdown link 2</a>
+                <a href="#!" class="dropdown-link">Dropdown link 3</a>
+                <a href="#!" class="dropdown-link">Dropdown link 4</a>
+            </div>
+        </div>
+    </div>
+</template>

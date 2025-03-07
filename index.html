@@ -20,26 +20,26 @@
   <link rel="icon" type="image/x-icon" href="/fadgram-ui-docs/assets/logo-BViibHxN.svg">
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="/fadgram-ui-docs/assets/main-BeL0VJ6q.js"></script>
-  <link rel="stylesheet" crossorigin href="/fadgram-ui-docs/assets/main-CrChdyjv.css">
+  <link href="https://fonts.bunny.net/css?family=poppins:400,500,600&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="/fadgram-ui-docs/assets/main-Dqtn3thU.js"></script>
+  <link rel="stylesheet" crossorigin href="/fadgram-ui-docs/assets/main-CGkvgckZ.css">
 </head>
 
-<body x-data="fadgramUiDocs"
-  class="relative font-poppins antialiased text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-900">
+<body x-data="fadgramUiDocs">
   <div class="min-h-screen">
-    <div class="drawer drawer-start bg-gray-100 dark:bg-gray-700 expand-lg" id="main-drawer" x-ref="mainDrawer">
-      <div class="drawer-header flex space-x-2 items-center h-14">
+    <div class="offcanvas offcanvas-start bg-gray-100 dark:bg-gray-700 expand-lg" id="main-offcanvas"
+      x-ref="mainOffcanvas">
+      <div class="offcanvas-header flex space-x-2 items-center h-14">
         <div
-          class="drawer-title grow text-center text-xl font-semibold bg-gradient-to-bl from-primary-600 to-rose-600 bg-clip-text text-transparent">
+          class="offcanvas-title grow text-center text-xl font-semibold bg-gradient-to-bl from-primary-600 to-rose-600 bg-clip-text text-transparent">
           FadgramUi
         </div>
         <span class="text-sm" x-text="version"></span>
-        <button class="btn drawer-close lg:hidden">
+        <button class="btn offcanvas-close lg:hidden">
           <i class="icon bi-x"></i>
         </button>
       </div>
-      <div class="drawer-body">
+      <div class="offcanvas-body">
         <nav class="nav vertical">
           <template x-for="(page, index) in pages" :key="index">
             <a x-bind="sidebarLink" class="nav-link" :href="getPageHref(page)"
@@ -53,7 +53,7 @@
     </div>
     <main class="lg:ps-64 min-h-75vh relative">
       <div class="navbar sticky top-0 bg-gray-100 dark:bg-gray-700 z-10 h-14 w-full">
-        <button class="btn lg:hidden" data-fg-toggle="drawer" data-fg-target="#main-drawer">
+        <button class="btn lg:hidden" data-fg-toggle="offcanvas" data-fg-target="#main-offcanvas">
           <i class="icon bi-list"></i>
         </button>
         <div class="nav justify-center">
@@ -69,27 +69,16 @@
         </div>
         <div class="nav">
           <button type="button" class="nav-link dark-mode-toggle">
-            <i class="icon bi-moon-stars-fill "></i> </button>
-          <div class="dropdown">
-            <button type="button" class="nav-link dropdown-toggle">
-              <i class="icon bi-person-fill "></i>
-              <i class="icon bi-chevron-down w-3 h-3 "></i> </button>
-            <div class="dropdown-menu dropdown-end">
-              <a href="#!" class="dropdown-link">
-                Sign in
-              </a>
-              <a href="#!" class="dropdown-link">
-                Register
-              </a>
-            </div>
-          </div>
+            <i class="icon bi-moon-stars-fill "></i>
+          </button>
+          <button type="button" class="nav-link rtl-toggle ms-2"></button>
         </div>
       </div><!--navbar-->
       <div class="container">
-        <div x-html="content"></div>
-        <div class="nav justify-between p-3">
+        <div x-html="content" class="py-4"></div>
+        <div class="flex justify-between mb-10 py-3">
           <template x-if="prevPage">
-            <a x-bind="sidebarLink" :href="getPageHref(prevPage)" class="nav-link">
+            <a x-bind="sidebarLink" :href="getPageHref(prevPage)" class="flex-space-2 text-sm link">
               <span class="icon bi-chevron-left"></span>
               <span x-text="prevPage.label"></span>
             </a>
@@ -98,7 +87,7 @@
             <span class="nav-link"></span>
           </template>
           <template x-if="nextPage">
-            <a x-bind="sidebarLink" :href="getPageHref(nextPage)" class="nav-link">
+            <a x-bind="sidebarLink" :href="getPageHref(nextPage)" class="flex-space-2 text-sm link">
               <span x-text="nextPage.label"></span>
               <span class="icon bi-chevron-right"></span>
             </a>
@@ -107,6 +96,10 @@
       </div><!-- container -->
     </main>
   </div>
+  <button type="button" role="button"
+    class="bg-primary/70 text-white font-bold hover:bg-primary transition-all flex items-center justify-center w-10 h-10 rounded-full btn-backtop">
+    <i class="icon bi-chevron-up"></i>
+  </button>
 </body>
 
 </html>
