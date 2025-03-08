@@ -1,0 +1,23 @@
+<h2>Toast</h2>
+<h4>Basic usage:</h4>
+<pre class="mt-4"><code class="language-javascript">import Toast from "fadgram-ui/helpers/toast";
+//make
+Toast.make(
+"Toast message", {
+    type: "success"; // success, info, warning, error
+    position: "top-end"; //top-start, top-center, top-end, bottom-start, bottom-center, bottom-end 
+});
+//success
+Toast.success("this is success toast");
+//info
+Toast.info("this is info toast");
+//warning
+Toast.warning("this is warning toast");
+//error
+Toast.error("this is error toast");</code></pre>
+<div class="flex flex-wrap gap-3 mt-4">
+    <template x-for="toast in toasts">
+        <button type="button" role="button" class="btn btn-primary" x-on:click="showToast(toast.message, toast.options)"
+            x-text="toast.label"></button>
+    </template>
+</div>

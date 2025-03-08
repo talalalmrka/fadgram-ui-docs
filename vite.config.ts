@@ -31,6 +31,7 @@ export default defineConfig({
             shadows: path.resolve(__dirname, 'pages/shadows.html'),
             tables: path.resolve(__dirname, 'pages/tables.html'),
             tabs: path.resolve(__dirname, 'pages/tabs.html'),
+            toasts: path.resolve(__dirname, 'pages/toasts.html'),
             tooltips: path.resolve(__dirname, 'pages/tooltips.html'),
             typography: path.resolve(__dirname, 'pages/typography.html'),
             

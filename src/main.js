@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { initFadgramUI } from "fadgram-ui/helpers";
 import { SourceCode } from "./source-code";
 import pkg from 'fadgram-ui/package.json' assert { type: 'json' };
-
+import Toast from "fadgram-ui/helpers/toast";
 const initialize = () => {
     initFadgramUI();
     SourceCode.init();
@@ -137,9 +137,15 @@ document.addEventListener('alpine:init', () => {
             },
             {
                 id: "tabs",
-                icon: "bi-star-fill",
+                icon: "bi-folder",
                 label: "Tabs",
                 url: "tabs.html",
+            },
+            {
+                id: "toasts",
+                icon: "bi-bell",
+                label: "Toast",
+                url: "toasts.html",
             },
         ],
         colors: [
@@ -334,6 +340,90 @@ document.addEventListener('alpine:init', () => {
                 class: "tabs-vertical tabs-pills",
             },
         ],
+        toasts: [
+            {
+                label: "Default toast",
+                message: "This is default toast",
+                options: {},
+            },
+            {
+                label: "Toast info",
+                message: "This is info toast",
+                options: {
+                    type: "info",
+                },
+            },
+            {
+                label: "Toast success",
+                message: "This is success toast",
+                options: {
+                    type: "success",
+                },
+            },
+            {
+                label: "Toast warning",
+                message: "This is warning toast",
+                options: {
+                    type: "warning",
+                },
+            },
+            {
+                label: "Toast error",
+                message: "This is error toast",
+                options: {
+                    type: "error",
+                },
+            },
+            {
+                label: "Toast top start",
+                message: "This is top start toast",
+                options: {
+                    position: "top-start",
+                },
+            },
+            {
+                label: "Toast top center",
+                message: "This is top center toast",
+                options: {
+                    position: "top-center",
+                },
+            },
+            {
+                label: "Toast top end",
+                message: "This is top end toast",
+                options: {
+                    position: "top-end",
+                },
+            },
+            {
+                label: "Toast center center",
+                message: "This is center center toast",
+                options: {
+                    position: "center-center",
+                },
+            },
+            {
+                label: "Toast bottom start",
+                message: "This is bottom start toast",
+                options: {
+                    position: "bottom-start",
+                },
+            },
+            {
+                label: "Toast bottom center",
+                message: "This is bottom center toast",
+                options: {
+                    position: "bottom-center",
+                },
+            },
+            {
+                label: "Toast bottom end",
+                message: "This is top end toast",
+                options: {
+                    position: "bottom-end",
+                },
+            },
+        ],
         currentPage: null,
         get prevPage() {
             const currentIndex = this.pages.findIndex(page => page.id === this.currentPage.id);
@@ -431,6 +521,9 @@ document.addEventListener('alpine:init', () => {
                     this.loadPage();
                 }
             });
+        },
+        showToast(message, options) {
+            Toast.make(message, options);
         },
         init() {
             this.initDefaultPage();
