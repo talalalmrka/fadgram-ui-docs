@@ -191,102 +191,28 @@
     </div>
 </div>
 
-<h2 class="mt-4">Input group</h2>
-<div class="input-group mb-4">
+<h2 class="mt-5">Input group</h2>
+<h4 class="mt-4 mb-4">Basic usage</h4>
+<div class="input-group has-code">
     <input type="text" class="form-control" placeholder="write text...">
     <input type="text" class="form-control" placeholder="write text...">
     <select class="form-select">
         <option value="m">Male</option>
-        <option value="1">Female</option>
+        <option value="f">Female</option>
     </select>
 </div>
 
-<pre><code class="language-html">&lt;div class=&quot;input-group&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
-        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
-        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;</code></pre>
-
-<h4 class="mt-4">Sizes</h4>
-
-<h6 class="mt-4">xs</h6>
-<div class="input-group xs mb-4">
-    <input type="text" class="form-control" placeholder="write text...">
-    <input type="text" class="form-control" placeholder="write text...">
-    <select id="" class="form-select">
-        <option value="m">Male</option>
-        <option value="1">Female</option>
-    </select>
-</div>
-
-<pre><code class="language-html">&lt;div class=&quot;input-group xs&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
-        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
-        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;</code></pre>
-
-<h6 class="mt-4">sm</h6>
-<div class="overflow-x-auto">
-    <div class="input-group sm mb-4">
-        <input type="text" class="form-control" placeholder="write text...">
-        <input type="text" class="form-control" placeholder="write text...">
-        <select id="" class="form-select">
-            <option value="m">Male</option>
-            <option value="1">Female</option>
-        </select>
+<h4 class="mt-5">Sizes</h4>
+<template x-for="size in sizes">
+    <div class="mt-4 has-code overflow-x-auto" data-source="inner">
+        <div class="section-title mb-2" x-text="size"></div>
+        <div class="input-group" :class="size">
+            <input type="text" class="form-control" placeholder="write text...">
+            <input type="text" class="form-control" placeholder="write text...">
+            <select class="form-select">
+                <option value="m">Male</option>
+                <option value="f">Female</option>
+            </select>
+        </div>
     </div>
-</div>
-<pre><code class="language-html">&lt;div class=&quot;input-group sm&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
-        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
-        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;</code></pre>
-
-<h6 class="mt-4">lg</h6>
-<div class="overflow-x-auto">
-    <div class="input-group lg mb-4">
-        <input type="text" class="form-control" placeholder="write text...">
-        <input type="text" class="form-control" placeholder="write text...">
-        <select id="" class="form-select">
-            <option value="m">Male</option>
-            <option value="1">Female</option>
-        </select>
-    </div>
-</div>
-<pre><code class="language-html">&lt;div class=&quot;input-group lg&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
-        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
-        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;</code></pre>
-
-<h6 class="mt-4">xl</h6>
-<div class="overflow-x-auto">
-    <div class="input-group xl mb-4">
-        <input type="text" class="form-control" placeholder="write text...">
-        <input type="text" class="form-control" placeholder="write text...">
-        <select id="" class="form-select">
-            <option value="m">Male</option>
-            <option value="1">Female</option>
-        </select>
-    </div>
-</div>
-<pre><code class="language-html">&lt;div class=&quot;input-group xl&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;write text...&quot;&gt;
-    &lt;select id=&quot;&quot; class=&quot;form-control&quot;&gt;
-        &lt;option value=&quot;m&quot;&gt;Male&lt;/option&gt;
-        &lt;option value=&quot;1&quot;&gt;Female&lt;/option&gt;
-    &lt;/select&gt;
-&lt;/div&gt;</code></pre>
+</template>
