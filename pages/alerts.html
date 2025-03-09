@@ -1,20 +1,85 @@
 <h2>Alerts</h2>
 <h4 class="mt-4">Basic usage</h4>
-<div class="alert" role="alert">
-    This is basic alert
+<template x-for="color in alertColors">
+    <div class="mt-4">
+        <div class="section-title mb-4" x-text="color"></div>
+        <div class="alert" :class="'alert-'+color" role="alert" x-text="'This is a '+color+' alert preview.'">
+        </div>
+    </div>
+</template>
+<div class="hidden has-code" data-source="inner">
+    <template x-for="color in alertColors">
+        <div class="alert" :class="'alert-'+color" role="alert" x-text="'This is a '+color+' alert preview.'">
+        </div>
+    </template>
 </div>
-<pre class="mt-4"><code class="language-html">&lt;div class=&quot;alert&quot; role=&quot;alert&quot;&gt;
-    This is basic alert
-&lt;/div&gt;</code></pre>
-<h4 class="mt-4">Colors</h4>
-<div class="alert" role="alert">This is a default alert.</div>
-<div class="alert alert-success" role="alert">This is a success alert.</div>
-<div class="alert alert-info" role="alert">This is a info alert.</div>
-<div class="alert alert-warning" role="alert">This is a warning alert.</div>
-<div class="alert alert-error" role="alert">This is a error alert.</div>
 
-<pre class="mt-4"><code class="language-html">&lt;div class=&quot;alert&quot; role=&quot;alert&quot;&gt;This is a default alert.&lt;/div&gt;
-&lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot;&gt;This is a success alert.&lt;/div&gt;
-&lt;div class=&quot;alert alert-info&quot; role=&quot;alert&quot;&gt;This is a info alert.&lt;/div&gt;
-&lt;div class=&quot;alert alert-warning&quot; role=&quot;alert&quot;&gt;This is a warning alert.&lt;/div&gt;
-&lt;div class=&quot;alert alert-error&quot; role=&quot;alert&quot;&gt;This is a error alert.&lt;/div&gt;</code></pre>
+<h4 class="mt-5">Soft alert</h4>
+<template x-for="color in alertColors">
+    <div class="mt-4">
+        <div class="section-title mb-4" x-text="color"></div>
+        <div class="alert alert-soft" :class="'alert-'+color" role="alert"
+            x-text="'This is a soft '+color+' alert preview.'">
+        </div>
+    </div>
+</template>
+<div class="hidden has-code" data-source="inner">
+    <template x-for="color in alertColors">
+        <div class="alert alert-soft" :class="'alert-'+color" role="alert"
+            x-text="'This is a soft '+color+' alert preview.'">
+        </div>
+    </template>
+</div>
+
+<h4 class="mt-5">Outline alert</h4>
+<template x-for="color in alertColors">
+    <div class="mt-4">
+        <div class="section-title mb-4" x-text="color"></div>
+        <div class="alert alert-outline" :class="'alert-'+color" role="alert"
+            x-text="'This is a outline '+color+' alert preview.'">
+        </div>
+    </div>
+</template>
+<div class="hidden has-code" data-source="inner">
+    <template x-for="color in alertColors">
+        <div class="alert alert-outline" :class="'alert-'+color" role="alert"
+            x-text="'This is a outline '+color+' alert preview.'">
+        </div>
+    </template>
+</div>
+
+<h4 class="mt-5">Sizes</h4>
+<template x-for="size in sizes">
+    <div class="mt-4">
+        <div class="section-title mb-4" x-text="size"></div>
+        <div class="alert" :class="size" role="alert" x-text="'This is a '+size+' alert preview.'">
+        </div>
+    </div>
+</template>
+<div class="hidden has-code" data-source="inner">
+    <template x-for="size in sizes">
+        <div class="alert alert-cyan" :class="size" role="alert" x-text="'This is a '+size+' alert preview.'">
+        </div>
+    </template>
+</div>
+
+<h4 class="mt-5">Colors</h4>
+<template x-for="color in colors">
+    <div class="mt-5">
+        <h4 x-text="color"></h4>
+        <div class="has-code" data-source="inner" data-exclude-selectors=".section-title">
+            <div class="section-title my-4">Default</div>
+            <div class="alert mt-4" :class="color !== 'default' ? 'alert-'+color : ''" role="alert"
+                x-text="'This is a '+color+' alert preview.'">
+            </div>
+            <div class="section-title my-4">Soft</div>
+            <div class="alert alert-soft mt-4" :class="color !== 'default' ? 'alert-'+color : ''" role="alert"
+                x-text="'This is a soft '+color+' alert preview.'">
+            </div>
+            <div class="section-title my-4">Outline</div>
+            <div class="alert alert-outline mt-4" :class="color !== 'default' ? 'alert-'+color : ''" role="alert"
+                x-text="'This is a outline '+color+' alert preview.'">
+            </div>
+        </div>
+    </div>
+</template>

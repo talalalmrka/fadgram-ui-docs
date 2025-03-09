@@ -52,8 +52,24 @@
     </div>
     <main class="lg:ps-64 min-h-75vh relative">
       <div class="navbar sticky top-0 bg-gray-100 dark:bg-gray-700 z-10 h-14 w-full">
-        <button class="btn lg:hidden" data-fg-toggle="offcanvas" data-fg-target="#main-offcanvas">
-          <i class="icon bi-list"></i>
+        <button class="lg:hidden nav-link" data-fg-toggle="offcanvas" data-fg-target="#main-offcanvas">
+          <svg fill="currentColor" width="25" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1792 1792" xml:space="preserve">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <title>fiction</title>
+              <path
+                d="M1673.9,1363.2L1673.9,1363.2c0,52.3-42.4,94.3-94.3,94.3H212.7c-52.3,0-94.3-42.4-94.3-94.3l0,0 c0-52.3,42.4-94.3,94.3-94.3h1366.8C1631.5,1268.5,1673.9,1310.9,1673.9,1363.2z">
+              </path>
+              <path
+                d="M1673.9,895.6L1673.9,895.6c0,52.3-42.4,94.3-94.3,94.3H659c-52.3,0-94.3-42.4-94.3-94.3l0,0c0-52.3,42.4-94.3,94.3-94.3 h920.6C1631.5,800.8,1673.9,843.2,1673.9,895.6z">
+              </path>
+              <path
+                d="M1673.9,427.9L1673.9,427.9c0,52.3-42.4,94.3-94.3,94.3H212.7c-52.3,0-94.3-42.4-94.3-94.3l0,0c0-52.3,42.4-94.3,94.3-94.3 h1366.8C1631.5,333.2,1673.9,375.6,1673.9,427.9z">
+              </path>
+            </g>
+          </svg>
         </button>
         <div class="nav justify-center">
           <div class="form-control-container w-[150px]">
@@ -75,7 +91,7 @@
       </div><!--navbar-->
       <div class="container">
         <div x-html="content" class="py-4"></div>
-        <div class="flex justify-between mb-10 py-3">
+        <div class="flex justify-between mb-20 py-3">
           <template x-if="prevPage">
             <a x-bind="sidebarLink" :href="getPageHref(prevPage)" class="flex-space-2 text-sm link">
               <span class="icon bi-chevron-left"></span>

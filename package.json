@@ -1,7 +1,7 @@
 {
   "name": "fadgram-ui-docs",
   "private": true,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,7 @@
     "@iconify-json/bi": "^1.2.2",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/typography": "^0.5.16",
-    "fadgram-ui": "^0.1.5",
+    "fadgram-ui": "^0.1.6",
     "vite": "^6.2.0"
   },
   "dependencies": {

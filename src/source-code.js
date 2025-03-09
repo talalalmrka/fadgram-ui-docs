@@ -1,49 +1,5 @@
 import beautify from 'js-beautify';
 import Prism from "prismjs";
-
-export class CopyCodeButton {
-    constructor(element) {
-        /*this.element = element;
-        this.copyButton = null;
-        this.copyIcon = null;
-        this._createButton();*/
-    }
-    _createButton() {
-        const copyButton = document.createElement('button');
-        copyButton.className = "btn-copy-code";
-        const copyIcon = document.createElement('i');
-        copyIcon.className = "icon bi-clipboard";
-        this.copyIcon = copyIcon;
-        copyButton.appendChild(copyIcon);
-        this.copyButton = copyButton;
-        this.element.appendChild(copyButton);
-        this._addListener();
-    }
-    _addListener() {
-        this.copyButton.addEventListener('click', (e) => this._copy(e));
-    }
-    _copy(e) {
-        e.preventDefault();
-        navigator.clipboard.writeText(this.element.textContent);
-        this.copyIcon.className = 'icon bi-clipboard-check-fill';
-        setTimeout(() => this.copyIcon.className = 'icon bi-clipboard', 2000);
-    }
-
-    static create(element) {
-        if (!element.querySelector('.btn-copy-code')) {
-            if (typeof window.copyCodeButtons === 'undefined') {
-                window.copyCodeButtons = [];
-            }
-            const btn = new CopyCodeButton(element);
-            window.copyCodeButtons.push(btn);
-        }
-    }
-    static init() {
-        document.querySelectorAll('code-container').forEach(element => {
-            CopyCodeButton.create(element);
-        });
-    }
-}
 export class SourceCode {
     constructor(element) {
         if (element.parentNode.classList.contains('code-container')) {
@@ -111,37 +67,62 @@ export class SourceCode {
         return typeof element.dataset.language !== 'undefined' ? element.dataset.language : 'html';
     }
     static fileName(element) {
-        return typeof element.dataset.fileName !== 'undefined' ? element.dataset.fileName : null;
+        const filename = typeof element.dataset.fileName !== 'undefined' ? element.dataset.fileName : null;
+        return filename ?? this.language(element);
     }
 
     static sourceCode(element) {
         let clone = element.cloneNode(true);
+
+        let defaultExcludeSelectors = [
+            'template',
+        ];
         let defaultExcludeClasses = [
             "has-code",
             "inited"
         ];
         let defaultExcludeAtts = [
             "data-exclude-classes",
-            "data-exclude-atts", "data-source",
+            "data-exclude-atts",
+            "data-exclude-selectors",
+            "data-source",
             "x-data",
             "x-text",
             "x-bind",
             "x-on:click",
             ":class",
         ];
+
+        let userExcludeSelectors = (element.getAttribute('data-exclude-selectors') || "").split(/\s+/).filter(Boolean);
+        let excludeSelectors = [...defaultExcludeSelectors, ...userExcludeSelectors];
         let userExcludeClasses = (element.getAttribute('data-exclude-classes') || "").split(/\s+/).filter(Boolean);
-        let userExcludeAtts = (element.getAttribute('data-exclude-atts') || "").split(/\s+/).filter(Boolean);
         let excludeClasses = [...defaultExcludeClasses, ...userExcludeClasses];
+        let userExcludeAtts = (element.getAttribute('data-exclude-atts') || "").split(/\s+/).filter(Boolean);
         let excludeAtts = [...defaultExcludeAtts, ...userExcludeAtts];
+
+        //exclude selectors
+        excludeSelectors.forEach(selector => {
+            const elements = clone.querySelectorAll(selector);
+            if (elements) {
+                elements.forEach(element => {
+                    element.remove();
+                });
+            }
+        });
+
+        //exclude classes
         clone.classList.remove(...excludeClasses);
         if (clone.className.trim() === "") {
             clone.removeAttribute('class');
         }
+
+        //exclude atts
         excludeAtts.forEach(attr => clone.removeAttribute(attr));
         clone.querySelectorAll('*').forEach(child => {
             child.classList.remove(...excludeClasses);
             excludeAtts.forEach(attr => child.removeAttribute(attr));
         });
+
         let sourceCode = this.sourceType(element) === 'inner' ? clone.innerHTML : clone.outerHTML;
         sourceCode = sourceCode.trim();
         switch (this.language(element)) {

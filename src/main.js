@@ -194,7 +194,8 @@ document.addEventListener('alpine:init', () => {
             'sm',
             'default',
             'lg',
-            'xl'
+            'xl',
+            'xxl',
         ],
         shadowSizes: [
             {
@@ -256,6 +257,32 @@ document.addEventListener('alpine:init', () => {
                 class: 'dropdown-top dropdown-end',
             },
         ],
+        alertTypes: [
+            "default",
+            "alert-soft",
+            "alert-outline",
+        ],
+        alertColors: [
+            "default",
+            "success",
+            "info",
+            "warning",
+            "error",
+        ],
+        alertComponent: {
+            [':class']() {
+                const color = this.$el.dataset.color ?? false;
+                const alertClass = `alert-${color}`;
+                return {
+                    'alert': true,
+                    alertClass: color,
+                };
+            },
+            ["x-text"]() {
+                const color = this.$el.dataset.color ?? "";
+                return `This is a ${color} alert preview`;
+            },
+        },
         tableTypes: [
             {
                 label: "Table Striped",
