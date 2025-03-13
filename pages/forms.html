@@ -216,3 +216,123 @@
         </div>
     </div>
 </template>
+
+<h4 class="mt-6 mb-4">Login form card</h4>
+<div class="card card-body has-code md:max-w-[350px] mx-auto">
+    <h5 class="text-gradient from-primary to-pink text-3xl font-semibold text-center">Sign in</h5>
+    <form action="#" method="POST">
+        <div class="grid grid-cols-1 gap-3">
+            <div class="col">
+                <label for="login" class="form-label">Username/Email</label>
+                <div class="form-control-container">
+                    <span class="start-icon">
+                        <i class="icon bi-person-fill"></i>
+                    </span>
+                    <input type="text" id="login" name="login" class="form-control has-start-icon pill"
+                        placeholder="Username/Email" autofocus autocomplete="username">
+                </div>
+            </div>
+            <div class="col">
+                <label for="login-password" class="form-label">Password</label>
+                <div class="form-control-container">
+                    <span class="start-icon">
+                        <i class="icon bi-key-fill"></i>
+                    </span>
+                    <input type="password" id="login-password" name="password"
+                        class="form-control pill has-start-icon has-end-icon" placeholder="Password" autofocus
+                        autocomplete="password">
+                </div>
+            </div>
+            <div class="col">
+                <label class="form-switch">
+                    <input type="checkbox" name="remember">
+                    <span class="toggle-slider"></span>
+                    <span class="form-switch-label">Remember Me</span>
+                </label>
+            </div>
+            <div class="col text-center text-sm">
+                <div class="flex space-x-2 justify-center text-sm">
+                    <span>Forgot password?</span>
+                    <a href="#!" class="link">Recover password</a>
+                </div>
+            </div>
+            <div class="col">
+                <button type="submit" role="button" class="btn btn-primary w-full pill">Sign in</button>
+            </div>
+            <div class="col">
+                <div class="flex space-x-2 justify-center text-sm">
+                    <span>Don't have an account?</span>
+                    <a href="#!" class="link">Sign up</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<h4 class="mt-6 mb-4">Register form card</h4>
+<div class="card card-body has-code md:max-w-[350px] mx-auto">
+    <h5 class="text-gradient from-primary to-pink text-3xl font-semibold text-center">Create account</h5>
+    <form action="#" method="POST">
+        <div class="grid grid-cols-1 gap-3">
+            <div class="col">
+                <label for="name" class="form-label">Username</label>
+                <div class="form-control-container">
+                    <span class="start-icon">
+                        <i class="icon bi-person-fill"></i>
+                    </span>
+                    <input type="text" id="name" name="name" class="form-control has-start-icon pill"
+                        placeholder="Username" autofocus autocomplete="username">
+                </div>
+            </div>
+            <div class="col">
+                <label for="login" class="form-label">Email</label>
+                <div class="form-control-container">
+                    <span class="start-icon">
+                        <i class="icon bi-envelope"></i>
+                    </span>
+                    <input type="text" id="email" name="login" class="form-control has-start-icon pill"
+                        placeholder="Email" autofocus autocomplete="email">
+                </div>
+            </div>
+            <div class="col">
+                <label for="password" class="form-label">Password</label>
+                <div class="form-control-container">
+                    <span class="start-icon">
+                        <i class="icon bi-key-fill"></i>
+                    </span>
+                    <input type="password" id="password" name="password"
+                        class="form-control pill has-start-icon has-end-icon" placeholder="Password" autofocus
+                        autocomplete="new-password">
+                </div>
+            </div>
+            <div class="col">
+                <label for="password_confirmation" class="form-label">Confirm password</label>
+                <div class="form-control-container">
+                    <span class="start-icon">
+                        <i class="icon bi-key-fill"></i>
+                    </span>
+                    <input type="password" id="password_confirmation" name="password_confirmation"
+                        class="form-control pill has-start-icon has-end-icon" placeholder="Confirm password" autofocus
+                        autocomplete="new-password">
+                </div>
+            </div>
+            <div class="col">
+                <label class="form-switch">
+                    <input type="checkbox" name="remember">
+                    <span class="toggle-slider"></span>
+                    <span class="form-switch-label">I aggree <a class="link" href="#!">terms</a> and <a class="link"
+                            href="#!">conditions</a>.</span>
+                </label>
+            </div>
+            <div class="col">
+                <button type="submit" role="button" class="btn btn-primary w-full pill">Register</button>
+            </div>
+            <div class="col">
+                <div class="flex space-x-2 justify-center text-sm">
+                    <span>Have an account?</span>
+                    <a href="#!" class="link">Sign in</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

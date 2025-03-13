@@ -45,4 +45,36 @@
 
 <h2>Text color</h2>
 <h4>Basic usage</h4>
-<div class="text-green has-code">This is a green text.</div>
+<div class="text-primary has-code">This is a primary text.</div>
+
+<h4 class="mt-6 mb-4">Text color</h4>
+<div class="has-code" data-source="inner" data-exclude-classes="mt-4">
+    <template x-for="color in colors">
+        <div class="mt-4" :class="{['text-'+color]: true, 'bg-dark': color === 'light'}"
+            x-text="'This is a '+color+' text preview.'"></div>
+    </template>
+</div>
+
+<h4 class="mt-6 mb-4">Text gradient</h4>
+<div class="has-code" data-source="inner" data-exclude-classes="mt-4 text-2xl">
+    <template x-for="color in colors">
+        <div class="mt-4 text-2xl" :class="{['text-gradient-'+color]: true, 'bg-dark': color === 'light'}"
+            x-text="'This is a gradient '+color+' text preview.'"></div>
+    </template>
+</div>
+
+<h4 class="mt-6 mb-4">Text gradient multiple colors</h4>
+<div class="has-code" data-source="inner" data-exclude-classes="mt-4 text-2xl">
+    <template x-for="gradient in textGradients">
+        <div class="mt-4 text-3xl font-semibold text-gradient" :class="gradient.class"
+            x-text="'This is a text gradient '+gradient.label+' preview.'"></div>
+    </template>
+</div>
+
+<h4 class="mt-6 mb-4">Text gradient direction</h4>
+<div class="has-code" data-source="inner" data-exclude-classes="mt-4 text-2xl">
+    <template x-for="direction in textGradientDirections">
+        <div class="mt-4 text-3xl font-semibold text-gradient from-primary to-pink" :class="direction.class"
+            x-text="'This is a text gradient '+direction.label+' preview.'"></div>
+    </template>
+</div>
