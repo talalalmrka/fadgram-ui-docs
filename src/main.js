@@ -197,6 +197,55 @@ document.addEventListener('alpine:init', () => {
             'xl',
             'xxl',
         ],
+        textGradients: [
+            {
+                label: "from primary to pink",
+                class: 'from-primary to-pink',
+            },
+            {
+                label: "from blue to green",
+                class: 'from-blue to-green',
+            },
+            {
+                label: "from red to yellow",
+                class: 'from-red to-yellow',
+            },
+            {
+                label: "from cyan to blue",
+                class: 'from-cyan to-blue',
+            },
+            {
+                label: "from sky to indigo",
+                class: 'from-sky to-indigo',
+            },
+
+        ],
+        textGradientDirections: [
+            {
+                label: "to left",
+                class: 'text-gradient-to-l',
+            },
+            {
+                label: "to top left",
+                class: 'text-gradient-to-tl',
+            },
+            {
+                label: "to bottom left",
+                class: 'text-gradient-to-bl',
+            },
+            {
+                label: "to right",
+                class: 'text-gradient-to-r',
+            },
+            {
+                label: "to top right",
+                class: 'text-gradient-to-tr',
+            },
+            {
+                label: "to bottom right",
+                class: 'text-gradient-to-br',
+            },
+        ],
         shadowSizes: [
             {
                 label: "xs",
@@ -281,6 +330,22 @@ document.addEventListener('alpine:init', () => {
             ["x-text"]() {
                 const color = this.$el.dataset.color ?? "";
                 return `This is a ${color} alert preview`;
+            },
+        },
+        textComponent: {
+            [':class']() {
+                const color = this.$el.dataset.color ?? false;
+                const textClass = `text-${color}`;
+                return {
+                    'text-2xl': true,
+                    'mt-4': true,
+                    [textClass]: true,
+                    'bg-dark': color === 'light',
+                };
+            },
+            ["x-text"]() {
+                const color = this.$el.dataset.color ?? "";
+                return `This is a ${color} text preview.`;
             },
         },
         tableTypes: [
