@@ -19,6 +19,7 @@ export default defineConfig({
             classes: path.resolve(__dirname, 'pages/classes.html'),
             colors: path.resolve(__dirname, 'pages/colors.html'),
             dropdowns: path.resolve(__dirname, 'pages/dropdowns.html'),
+            flex: path.resolve(__dirname, 'pages/flex.html'),
             forms: path.resolve(__dirname, 'pages/forms.html'),
             icons: path.resolve(__dirname, 'pages/icons.html'),
             install: path.resolve(__dirname, 'pages/install.html'),
