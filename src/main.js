@@ -40,6 +40,12 @@ document.addEventListener('alpine:init', () => {
                 url: "background.html",
             },
             {
+                id: "flex",
+                icon: 'bi-columns',
+                label: 'Flex',
+                url: "flex.html",
+            },
+            {
                 id: "buttons",
                 icon: "bi-square",
                 label: "Buttons",
@@ -306,6 +312,9 @@ document.addEventListener('alpine:init', () => {
                 class: 'dropdown-top dropdown-end',
             },
         ],
+        get flexSpaces() {
+            return _.range(0, 12);
+        },
         alertTypes: [
             "default",
             "alert-soft",
