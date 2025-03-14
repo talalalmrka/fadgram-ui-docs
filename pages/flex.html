@@ -1,0 +1,17 @@
+<h2>Flex spacing</h2>
+<template x-for="space in flexSpaces">
+    <div class="mt-5">
+        <div class="section-title mb-4" x-text="'.flex-space-'+space"></div>
+        <div class="has-code" :class="'flex-space-'+space">
+            <div class="bg-red h-12 w-12 text-white text-center rounded flex items-center justify-center">
+                1
+            </div>
+            <div class="bg-red h-12 w-12 text-white text-center rounded flex items-center justify-center">
+                2
+            </div>
+            <div class="bg-red h-12 w-12 text-white text-center rounded flex items-center justify-center">
+                3
+            </div>
+        </div>
+    </div>
+</template>
