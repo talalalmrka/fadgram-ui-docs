@@ -28,6 +28,7 @@ body {
                 @apply -translate-x-full;
             }
         }
+    }
 }
 #main-offcanvas {
     .nav-link {
