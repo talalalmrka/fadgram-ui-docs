@@ -42,7 +42,7 @@
       <div class="offcanvas-body">
         <nav class="nav vertical">
           <template x-for="(page, index) in pages" :key="index">
-            <a x-bind="sidebarLink" class="nav-link" :href="getPageHref(page)"
+            <a x-bind="sidebarLink" class="nav-link flex-space-2" :href="getPageHref(page)"
               :class="{'active': page.id == currentPage.id}">
               <i class="icon" :class="page.icon"></i>
               <span x-text="page.label"></span>
