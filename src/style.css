@@ -67,6 +67,7 @@ pre[class*=language-] {
 
 .code-container {
     @apply relative mt-4 bg-gray-800 rounded;
+    direction: ltr;
 }
 
 .code-toolbar {
