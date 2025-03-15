@@ -15,7 +15,7 @@ body {
 @layer components {
     .offcanvas {
         @variant rtl{
-            translate-x-full;
+            @apply translate-x-full;
         }
         &.offcanvas-start {
             @variant rtl{
