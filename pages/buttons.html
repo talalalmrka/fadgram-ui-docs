@@ -3,22 +3,18 @@
 <button type="button" role="button" class="btn btn-primary has-code">Button</button>
 
 <h4 class="mt-5">Colors:</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
     <template x-for="color in colors">
         <button class="btn" :class="'btn-'+color" x-text="color"></button>
     </template>
 </div>
-<pre
-    class="mt-4"><code class="language-html">&lt;button class=&quot;btn btn-{color}&quot;&gt;Button&lt;/button&gt;</code></pre>
 
 <h4 class="mt-5">Gradient</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
     <template x-for="color in colors">
         <button class="btn gradient" :class="'btn-'+color" x-text="color"></button>
     </template>
 </div>
-<pre
-    class="mt-4"><code class="language-html">&lt;button class=&quot;btn btn-{color} gradient&quot;&gt;Button&lt;/button&gt;</code></pre>
 
 <h4 class="mt-5">Button outline</h4>
 <div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
@@ -28,13 +24,17 @@
 </div>
 
 <h4 class="mt-5">Pill</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline has—code" data-source="inner">
     <template x-for="color in colors">
         <button class="btn pill" :class="'btn-'+color" x-text="color"></button>
     </template>
 </div>
-<pre
-    class="mt-4"><code class="language-html">&lt;button class=&quot;btn btn-{color} pill&quot;&gt;Button&lt;/button&gt;</code></pre>
+<h4 class="mt-5">Button outline pill</h4>
+<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
+    <template x-for="color in colors">
+        <button class="btn pill" :class="'btn-outline-'+color" x-text="color"></button>
+    </template>
+</div>
 
 <h4 class="mt-5">Sizes</h4>
 <small>supported sizes: xs, sm, lg, xl</small>
