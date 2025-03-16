@@ -3,39 +3,79 @@
 <button type="button" role="button" class="btn btn-primary has-code">Button</button>
 
 <h4 class="mt-5">Colors:</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
     <template x-for="color in colors">
         <button class="btn" :class="'btn-'+color" x-text="color"></button>
-
     </template>
 </div>
+<div class="alert alert-info alert-soft flex-space-2 my-4 p-2">
+    <i class="icon bi-info-square-fill"></i>
+    <span>Replace {color} with the color name: primary, secondary, green, red, blue ...etc</span>
+</div>
+<div class="hidden has-code" data-source="inner">
+    <button class="btn btn-{color}">Button</button>
+</div>
+
 
 <h4 class="mt-5">Gradient</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
     <template x-for="color in colors">
         <button class="btn gradient" :class="'btn-'+color" x-text="color"></button>
     </template>
 </div>
+<div class="alert alert-info alert-soft flex-space-2 my-4 p-2">
+    <i class="icon bi-info-square-fill"></i>
+    <span>Replace {color} with the color name: primary, secondary, green, red, blue ...etc</span>
+</div>
+<div class="hidden has-code" data-source="inner">
+    <button class="btn btn-{color} gradient">Button</button>
+</div>
+
 
 <h4 class="mt-5">Button outline</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
     <template x-for="color in colors">
         <button class="btn" :class="'btn-outline-'+color" x-text="color"></button>
     </template>
 </div>
+<div class="alert alert-info alert-soft flex-space-2 my-4 p-2">
+    <i class="icon bi-info-square-fill"></i>
+    <span>Replace {color} with the color name: primary, secondary, green, red, blue ...etc</span>
+</div>
+<div class="hidden has-code" data-source="inner">
+    <button class="btn btn-outline-{color}">Button</button>
+</div>
+
 
 <h4 class="mt-5">Pill</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline has—code" data-source="inner">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
     <template x-for="color in colors">
         <button class="btn pill" :class="'btn-'+color" x-text="color"></button>
     </template>
 </div>
+<div class="alert alert-info alert-soft flex-space-2 my-4 p-2">
+    <i class="icon bi-info-square-fill"></i>
+    <span>Replace {color} with the color name: primary, secondary, green, red, blue ...etc</span>
+</div>
+<div class="hidden has-code" data-source="inner">
+    <button class="btn btn-{color} pill">Button</button>
+</div>
+
+
 <h4 class="mt-5">Button outline pill</h4>
-<div class="flex gap-3 flex-wrap mt-4 items-baseline has-code" data-source="inner">
+<div class="flex gap-3 flex-wrap mt-4 items-baseline">
     <template x-for="color in colors">
         <button class="btn pill" :class="'btn-outline-'+color" x-text="color"></button>
     </template>
 </div>
+<div class="alert alert-info alert-soft flex-space-2 my-4 p-2">
+    <i class="icon bi-info-square-fill"></i>
+    <span>Replace {color} with the color name: primary, secondary, green, red, blue ...etc</span>
+</div>
+<div class="hidden has-code" data-source="inner">
+    <button class="btn btn-outline-{color} pill">Button</button>
+</div>
+
 
 <h4 class="mt-5">Sizes</h4>
 <small>supported sizes: xs, sm, lg, xl</small>
