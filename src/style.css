@@ -82,7 +82,7 @@ h4 {
 }
 
 @utility btn-outline-*{
-    @apply border;
+    @apply border focus:ring-0;
     background-color:transparent;
     border-color: --value(--color-*);
     color: --value(--color-*);
