@@ -88,6 +88,6 @@ h4 {
     color: --value(--color-*);
     @variant hover{
         background-color: --value(--color-*);
-        color: --value(--text-bg-*);
+        color: --value(--color-bg-*);
     }
 }
