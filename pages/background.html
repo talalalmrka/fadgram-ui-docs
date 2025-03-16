@@ -25,6 +25,9 @@
 &lt;div class=&quot;bg-indigo text-bg-indigo p-2 rounded mt-4&quot;&gt;this is text with background indigo&lt;/div&gt;</code></pre>
 
 <h4 class="mt-4">Background gradient</h4>
+<template x-for="color in colors" class="code" data-source="inner">
+    <div class="p-2 rounded" :class="'bg-gradient-'+color+' text-bg-'+color" x-text="'this is text with background gradient'+color"></div>
+</template>
 <div class="bg-primary text-bg-primary bg-gradient p-2 rounded mt-4">this is text with background primary</div>
 <div class="bg-secondary text-bg-secondary bg-gradient p-2 rounded mt-4">this is text with background secondary</div>
 <div class="bg-light text-bg-light bg-gradient p-2 rounded mt-4">this is text with background light</div>
