@@ -554,6 +554,9 @@ document.addEventListener('alpine:init', () => {
                 };
             },
         },
+        errorStatus(message) {
+            this.content = `<div class="alert alert-red alert-soft my-6">${message}</div>`;
+        },
         async loadPage() {
             if (this.currentPageUrl) {
                 this.content = '<div class="text-center p-4">Loading...</div>';
@@ -569,7 +572,7 @@ document.addEventListener('alpine:init', () => {
                     }, 100);
                 } catch (error) {
                     console.error('Failed to load page:', error);
-                    this.content = 'Failed to load content. Please try again later.';
+                    this.errorStatus('Failed to load content. Please try again later.');
                 }
             }
         },
