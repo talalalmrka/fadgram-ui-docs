@@ -1,0 +1,118 @@
+<h2>Accordion</h2>
+<h2 class="mt-5">Requirments</h2>
+<p>
+    this accordion plugin requires Alpine.js for installation read official documentation here <a class="link"
+        href="https://alpinejs.dev/essentials/installation" target="_blank">Alpine js installation</a></a>.
+</p>
+<h2 class="mt-5">Apply accordion to Alpine js</h2>
+<pre data-file-name="app.js" class="mt-4"><code class="language-javascript">import Alpine from 'alpinejs';
+import accordion from 'fadgram-ui/alpine/accordion';
+Alpine.plugin(accordion);</code></pre>
+<h4 class="mt-6">Basic usage</h4>
+
+<div x-accordion>
+    <div x-accordion-item>
+        <div x-accordion-header>
+            Item 1
+        </div>
+        <div x-accordion-body>
+            This is the content for Item 1. You can place any HTML content here, such as text, images, or otherelements.
+        </div>
+    </div>
+    <div x-accordion-item>
+        <div x-accordion-header>
+            Item 2
+        </div>
+        <div x-accordion-body>
+            This is the content for Item 2. You can place any HTML content here, such as text, images, or otherelements.
+        </div>
+    </div>
+    <div x-accordion-item>
+        <div x-accordion-header>
+            Item 3
+        </div>
+        <div x-accordion-body>
+            This is the content for Item 3. You can place any HTML content here, such as text, images, or otherelements.
+        </div>
+    </div>
+</div>
+<pre class="mt-4" data-file-name="html"><code class="language-html">&lt;div x-accordion&gt;
+    &lt;div x-accordion-item&gt;
+        &lt;div x-accordion-header&gt;
+            Item 1
+        &lt;/div&gt;
+        &lt;div x-accordion-body&gt;
+            This is the content for Item 1. You can place any HTML content here, such as text, images, or otherelements.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div x-accordion-item&gt;
+        &lt;div x-accordion-header&gt;
+            Item 2
+        &lt;/div&gt;
+        &lt;div x-accordion-body&gt;
+            This is the content for Item 2. You can place any HTML content here, such as text, images, or otherelements.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div x-accordion-item&gt;
+        &lt;div x-accordion-header&gt;
+            Item 3
+        &lt;/div&gt;
+        &lt;div x-accordion-body&gt;
+            This is the content for Item 3. You can place any HTML content here, such as text, images, or otherelements.
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<h4 class="mt-6">Multiple mode</h4>
+
+<div x-accordion.multiple>
+    <div x-accordion-item>
+        <div x-accordion-header>
+            Item 1
+        </div>
+        <div x-accordion-body>
+            This is the content for Item 1. You can place any HTML content here, such as text, images, or otherelements.
+        </div>
+    </div>
+    <div x-accordion-item>
+        <div x-accordion-header>
+            Item 2
+        </div>
+        <div x-accordion-body>
+            This is the content for Item 2. You can place any HTML content here, such as text, images, or otherelements.
+        </div>
+    </div>
+    <div x-accordion-item>
+        <div x-accordion-header>
+            Item 3
+        </div>
+        <div x-accordion-body>
+            This is the content for Item 3. You can place any HTML content here, such as text, images, or otherelements.
+        </div>
+    </div>
+</div>
+<pre class="mt-4" data-file-name="html"><code class="language-html">&lt;div x-accordion.multiple&gt;
+    &lt;div x-accordion-item&gt;
+        &lt;div x-accordion-header&gt;
+            Item 1
+        &lt;/div&gt;
+        &lt;div x-accordion-body&gt;
+            This is the content for Item 1. You can place any HTML content here, such as text, images, or otherelements.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div x-accordion-item&gt;
+        &lt;div x-accordion-header&gt;
+            Item 2
+        &lt;/div&gt;
+        &lt;div x-accordion-body&gt;
+            This is the content for Item 2. You can place any HTML content here, such as text, images, or otherelements.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div x-accordion-item&gt;
+        &lt;div x-accordion-header&gt;
+            Item 3
+        &lt;/div&gt;
+        &lt;div x-accordion-body&gt;
+            This is the content for Item 3. You can place any HTML content here, such as text, images, or otherelements.
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
