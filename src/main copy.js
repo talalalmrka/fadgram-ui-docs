@@ -5,7 +5,6 @@ import { SourceCode } from "./source-code";
 import pkg from 'fadgram-ui/package.json' assert { type: 'json' };
 import Toast from "fadgram-ui/helpers/toast";
 import accordion from "fadgram-ui/alpine/accordion";
-import pages from './pages.json';
 Alpine.plugin(accordion);
 const initialize = () => {
     initFadgramUI();
@@ -17,7 +16,152 @@ document.addEventListener('alpine:init', () => {
         get version() {
             return `v${pkg.version}`;
         },
-        pages,
+        pages: [
+            {
+                id: "installation",
+                icon: "bi-gear-wide-connected",
+                label: "Installation",
+                url: "install.html",
+            },
+            {
+                id: "typograohy",
+                icon: "bi-type",
+                label: "Typography",
+                url: "typography.html",
+            },
+            {
+                id: "colors",
+                icon: "bi-palette",
+                label: "Colors",
+                url: "colors.html",
+            },
+            {
+                id: "background",
+                icon: "bi-palette",
+                label: "Background color",
+                url: "background.html",
+            },
+            {
+                id: "flex",
+                icon: 'bi-columns',
+                label: 'Flex',
+                url: "flex.html",
+            },
+            {
+                id: "buttons",
+                icon: "bi-square",
+                label: "Buttons",
+                url: "buttons.html",
+            },
+            {
+                id: "dropdowns",
+                icon: "bi-menu-button",
+                label: "Dropdowns",
+                url: "dropdowns.html",
+            },
+            {
+                id: "forms",
+                icon: "bi-ui-checks",
+                label: "Forms",
+                url: "forms.html",
+            },
+            {
+                id: "cards",
+                icon: "bi-card-heading",
+                label: "Cards",
+                url: "cards.html",
+            },
+            {
+                id: "accordion",
+                icon: "bi-collapse-arrow",
+                label: "Accordion",
+                url: "accordion.html",
+            },
+            {
+                id: "icons",
+                icon: "bi-emoji-neutral",
+                label: "Icons",
+                url: "icons.html",
+            },
+            {
+                id: "navbars",
+                icon: "bi-segmented-nav",
+                label: "Navbar",
+                url: "navbars.html",
+            },
+            {
+                id: "badges",
+                icon: "bi-tag-fill",
+                label: "Badges",
+                url: "badges.html",
+            },
+            {
+                id: "progress",
+                icon: "bi-bar-chart",
+                label: "Progress bar",
+                url: "progressbars.html",
+            },
+            {
+                id: "offcanvas",
+                icon: "bi-layout-sidebar-inset",
+                label: "Offcanvas",
+                url: "offcanvas.html",
+            },
+            {
+                id: "alerts",
+                icon: "bi-info-square",
+                label: "Alerts",
+                url: "alerts.html",
+            },
+            {
+                id: "tables",
+                icon: "bi-table",
+                label: "Tables",
+                url: "tables.html",
+            },
+            {
+                id: "shadows",
+                icon: "bi-cloud",
+                label: "Shadows",
+                url: "shadows.html",
+            },
+            {
+                id: "tooltips",
+                icon: "bi-chat-left-dots",
+                label: "Tooltips",
+                url: "tooltips.html",
+            },
+            {
+                id: "modal",
+                icon: "bi-window",
+                label: "Modal",
+                url: "modals.html",
+            },
+            {
+                id: "listgroup",
+                icon: "bi-list",
+                label: "List Group",
+                url: "listgroup.html",
+            },
+            {
+                id: "ratingbars",
+                icon: "bi-star-fill",
+                label: "Rating bar",
+                url: "ratingbars.html",
+            },
+            {
+                id: "tabs",
+                icon: "bi-folder",
+                label: "Tabs",
+                url: "tabs.html",
+            },
+            {
+                id: "toasts",
+                icon: "bi-bell",
+                label: "Toast",
+                url: "toasts.html",
+            },
+        ],
         colors: [
             'primary',
             'secondary',
