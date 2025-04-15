@@ -2,12 +2,12 @@
 @plugin "@tailwindcss/typography";
 @import "prismjs/themes/prism-okaidia.min.css";
 
-@plugin "@iconify/tailwind4" {
+/*@plugin "@iconify/tailwind4" {
     prefixes: bi;
     iconSelector: ".{prefix}-{name}";
     maskSelector: ".icon";
 }
-
+*/
 @import "fadgram-ui";
 
 @theme {

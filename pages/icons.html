@@ -6,7 +6,7 @@
         href="https://icons.getbootstrap.com/" target="_blank" title="Bootstrap icons set">Bootstrap icons set</a>.
 </p>
 <h4 class="my-4">Usage:</h4>
-<div class="alert alert-info mb-4">
+<div class="alert alert-soft sm alert-info mb-4">
     replace {name} with the bootstrap icon name like: bi-house-fill the full class looks like
     <code>icon bi-house-fill</code>.
 </div>
@@ -14,32 +14,36 @@
     <i class="icon bi-house-fill has-code"></i>
 </div>
 
-<h4 class="my-4">More examples:</h4>
-<div class="grid auto-cols-auto grid-flow-col gap-4 mb-4">
-    <div class="flex flex-col items-center">
-        <i class="icon bi-house-fill"></i>
-        <small>bi-house-fill</small>
-    </div>
-    <div class="flex flex-col items-center">
-        <i class="icon bi-newspaper"></i>
-        <small>bi-newspaper</small>
-    </div>
-    <div class="flex flex-col items-center">
-        <i class="icon bi-palette-fill"></i>
-        <small>bi-palette-fill</small>
-    </div>
-    <div class="flex flex-col items-center">
-        <i class="icon bi-info"></i>
-        <small>bi-info</small>
-    </div>
-    <div class="flex flex-col items-center">
-        <i class="icon bi-shield-fill-check"></i>
-        <small>bi-shield-fill-check</small>
+<h4 class="mt-8 mb-4">Icons list</h4>
+<div class="form-control-container inline-flex">
+    <span class="start-icon">
+        <i class="icon bi-search"></i>
+    </span>
+    <input type="search" x-model="iconsSearch" class="form-control has-start-icon xs pill" placeholder="search">
+</div>
+<div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mt-3 mb-4">
+    <template x-for="icon in pageIcons">
+        <div class="flex flex-col items-center bg-gray/5 dark:bg-gray-700 rounded-lg hover:text-primary cursor-pointer">
+            <i class="icon w-10 h-10 mt-6" :class="'bi-'+icon"></i>
+            <div class="my-3 text-center text-xs" x-text="icon"></div>
+        </div>
+    </template>
+</div>
+<div x-show="!pageIcons.length" class="alert alert-info alert-soft sm my-5 flex-space-2">
+    <i class="icon bi-info-circle"></i>
+    <div class="grow">
+        No icons found
     </div>
 </div>
-<div class="hidden has-code" data-source="inner">
-    <i class="icon bi-house-fill"></i>
-    <i class="icon bi-newspaper"></i>
-    <i class="icon bi-palette-fill"></i>
-    <i class="icon bi-info"></i>
+<div class="flex items-center justify-between text-xs p-3">
+    <div>
+        <button x-on:click="iconsPrev" type="button" class="btn btn-primary xs" :disabled="iconsPage <= 1">Prev</button>
+    </div>
+    <div>
+        <span x-text="iconsPageLabel"></span>
+    </div>
+    <div>
+        <button x-on:click="iconsNext" type="button" class="btn btn-primary xs" :disabled="iconsPage >= iconsPages">Next</button>
+    </div>
 </div>
+

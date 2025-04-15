@@ -6,16 +6,43 @@ import pkg from 'fadgram-ui/package.json' assert { type: 'json' };
 import Toast from "fadgram-ui/helpers/toast";
 import accordion from "fadgram-ui/alpine/accordion";
 import pages from './pages.json';
+import { icons } from "@iconify-json/bi/index.js";
 Alpine.plugin(accordion);
 const initialize = () => {
     initFadgramUI();
     SourceCode.init();
 };
-
 document.addEventListener('alpine:init', () => {
     Alpine.data('fadgramUiDocs', () => ({
         get version() {
             return `v${pkg.version}`;
+        },
+        iconsPage: 1,
+        perPage: 40,
+        allIcons: Object.keys(icons.icons),
+        iconsSearch: '',
+        get filteredIcons() {
+            return this.allIcons.filter(icon => icon.toLowerCase().includes(this.iconsSearch.toLowerCase()));
+        },
+        get pageIcons() {
+            return this.filteredIcons.slice((this.iconsPage - 1) * this.perPage, this.iconsPage * this.perPage);
+        },
+        get iconsPages() {
+            return Math.ceil(this.filteredIcons.length / this.perPage);
+        },
+        
+        get iconsPageLabel(){
+            return `${this.iconsPage}/${this.iconsPages}`;
+        },
+        iconsNext(){
+            if(this.iconsPage < this.iconsPages){
+                this.iconsPage++;
+            }
+        },
+        iconsPrev(){
+            if(this.iconsPage > 1){
+                this.iconsPage--;
+            }
         },
         pages,
         colors: [
@@ -497,7 +524,9 @@ document.addEventListener('alpine:init', () => {
             this.initDefaultPage();
             const hash = window.location.hash.substring(1);
             this.loadPage();
-            this.addHashListener()
+            this.addHashListener();
+            //console.log(this.pageIcons);
+            
             this.$nextTick(() => {
                 initialize();
             });
