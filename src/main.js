@@ -307,15 +307,17 @@ document.addEventListener("alpine:init", () => {
         class: "tabs-vertical tabs-pills",
       },
     ],
-    toasts: [
+    toastTypes: [
       {
         label: "Default toast",
         message: "This is default toast",
+        btn: "btn-primary",
         options: {},
       },
       {
         label: "Toast info",
         message: "This is info toast",
+        btn: "btn-sky",
         options: {
           type: "info",
         },
@@ -323,6 +325,7 @@ document.addEventListener("alpine:init", () => {
       {
         label: "Toast success",
         message: "This is success toast",
+        btn: "btn-green",
         options: {
           type: "success",
         },
@@ -330,6 +333,7 @@ document.addEventListener("alpine:init", () => {
       {
         label: "Toast warning",
         message: "This is warning toast",
+        btn: "btn-yellow",
         options: {
           type: "warning",
         },
@@ -337,10 +341,13 @@ document.addEventListener("alpine:init", () => {
       {
         label: "Toast error",
         message: "This is error toast",
+        btn: "btn-red",
         options: {
           type: "error",
         },
       },
+    ],
+    toastPositions: [
       {
         label: "Toast top start",
         message: "This is top start toast",
@@ -363,10 +370,24 @@ document.addEventListener("alpine:init", () => {
         },
       },
       {
-        label: "Toast center center",
-        message: "This is center center toast",
+        label: "Toast center start",
+        message: "This is center start toast",
         options: {
-          position: "center-center",
+          position: "center-start",
+        },
+      },
+      {
+        label: "Toast center",
+        message: "This is center toast",
+        options: {
+          position: "center",
+        },
+      },
+      {
+        label: "Toast center end",
+        message: "This is center end toast",
+        options: {
+          position: "center-end",
         },
       },
       {

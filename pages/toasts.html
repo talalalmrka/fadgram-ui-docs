@@ -15,9 +15,23 @@ Toast.info("this is info toast");
 Toast.warning("this is warning toast");
 //error
 Toast.error("this is error toast");</code></pre>
+
+
+<h4 class="mt-6">Type:</h4>
 <div class="flex flex-wrap gap-3 mt-4">
-    <template x-for="toast in toasts">
-        <button type="button" role="button" class="btn btn-primary" x-on:click="showToast(toast.message, toast.options)"
-            x-text="toast.label"></button>
+    <template x-for="tt in toastTypes">
+        <button type="button" role="button" class="btn" :class="tt.btn" x-on:click="showToast(tt.message, tt.options)"
+            x-text="tt.label"></button>
     </template>
 </div>
+
+
+<h4 class="mt-6">Position:</h4>
+<div class="flex flex-wrap gap-3 mt-4">
+    <template x-for="tp in toastPositions">
+        <button type="button" role="button" class="btn btn-primary" x-on:click="showToast(tp.message, tp.options)"
+            x-text="tp.label"></button>
+    </template>
+</div>
+
+<!--class="toast-container toast-success toast-info toast-warning toast-error" -->
